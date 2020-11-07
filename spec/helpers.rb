@@ -19,4 +19,7 @@ module Helpers
     expect(response[:results][0][:locations][0][:latLng][:lat]).to be_an(Float)
     expect(response[:results][0][:locations][0][:latLng][:lng]).to be_an(Float)
   end
+
+  def forecast_response_structure(response)
+  end
 end

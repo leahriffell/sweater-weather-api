@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe GeocodeService do
+RSpec.describe WeatherService do
   describe 'happy paths' do
-    it 'can fetch the lat and long for a city' do
-      VCR.use_cassette('geocode_denver') do
-        response = GeocodeService.forward_geocode('Denver, CO')
+    it 'can fetch the forecase given lat and long' do
+      VCR.use_cassette('forecast_denver') do
+        response = WeatherService.fetch_forecast(39.738453, -104.984853)
         expect(response).to be(successful)
-        forward_geolocation_response_structure(response)
+        forecast_response_structure(response)
       end
     end
   end
