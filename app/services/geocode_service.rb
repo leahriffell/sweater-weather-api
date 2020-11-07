@@ -4,7 +4,8 @@ class GeocodeService
       request.params['key'] = ENV['GEOCODE_API_KEY']
       request.params['location'] = city_state.delete(" ")
     end
-    parse(response)
+    parsed = parse(response)
+    parsed[:results][0][:locations][0][:latLng]
   end
 
   private
