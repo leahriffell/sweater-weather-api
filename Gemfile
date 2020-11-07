@@ -48,6 +48,7 @@ group :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'simplecov'
+  gem 'capybara'
   gem 'shoulda-matchers'
   gem 'nyan-cat-formatter'
   gem 'webmock'

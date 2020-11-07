@@ -5,7 +5,6 @@ RSpec.describe WeatherService do
     it 'can fetch the forecase given lat and long' do
       VCR.use_cassette('forecast_denver') do
         response = WeatherService.fetch_forecast(39.738453, -104.984853)
-        expect(response).to be(successful)
         forecast_response_structure(response)
       end
     end
