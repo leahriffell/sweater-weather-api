@@ -49,7 +49,9 @@ group :test do
   gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem "nyan-cat-formatter"
+  gem 'nyan-cat-formatter'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 
