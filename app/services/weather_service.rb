@@ -4,6 +4,7 @@ class WeatherService
       request.params['appid'] = ENV['WEATHER_API_KEY']
       request.params['lat'] = lat
       request.params['lon'] = long
+      request.params['units'] = 'imperial'
     end
     parse(response)
   end

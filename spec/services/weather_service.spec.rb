@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe WeatherService do
   describe 'happy paths' do
     it 'can fetch the forecase given lat and long' do
-      VCR.use_cassette('forecast_denver') do
+      # VCR.use_cassette('forecast_denver') do
         response = WeatherService.fetch_forecast(39.738453, -104.984853)
         forecast_response_structure(response)
-      end
+      # end
     end
   end
 
