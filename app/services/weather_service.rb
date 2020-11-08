@@ -5,6 +5,7 @@ class WeatherService
       request.params['lat'] = lat
       request.params['lon'] = long
       request.params['units'] = 'imperial'
+      request.params['exclude'] = 'minutely'
     end
     parse(response)
   end
