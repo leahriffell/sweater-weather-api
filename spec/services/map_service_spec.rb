@@ -6,9 +6,9 @@ RSpec.describe MapService do
       # VCR.use_cassette('geocode_denver') do
         response = MapService.forward_geocode('Denver, CO')
         expect(response).to have_key(:lat)
-        expect(response[:lat]).to be_a(Float)
+        expect(response[:lat]).to be_a(Numeric)
         expect(response).to have_key(:lng)
-        expect(response[:lng]).to be_a(Float)
+        expect(response[:lng]).to be_a(Numeric)
       # end
     end
   end
