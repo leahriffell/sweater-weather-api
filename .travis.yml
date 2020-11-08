@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+cache:
+- bundler
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+deploy:
+  api_key:
+    secure: mUWQ4KwSn+9tgEPWSgOYSPTZ4WoEMChy2ZQRijuHPxuiEyXeAM4AP+OG2MhS6GlmJ3wrk3pB1oiGy9ZrWnHe6oGUAG/+yGSkIRLpeZaQdSHGbDXGd984me9sT/t3uf9HJ8Vt/YmYVJLP/YgdOGF0lpbWUW1c0KaU6wvS4gML/qgt2XaPcykddD7GuGwVZ4z+h3spH1w5AOtngkSj/fej0WQsqi74F3EQExRUjp2bjvryTRD6p/B/Mue2ilcY7v9AizrzkoXvzH/FcszamH6G61b5AXQvBLANBw2LG1QYJvEWmmss5WO0uHUJEmILqf9riH+itPf2KyQOMrcGXSHY3T5ejcWJrqQhes0TT5NQetaeTdCk5v210SvF0fDExLC9EdQnn3J26VI9kmJZc1/wYF3i8JrO24/T0i7r26zdf6wFeBv+3Rs9F2zluuWpCOx5if3msQgpAPNvrOB4gl2XfxUQT/6lhKr/bqrX3fBPrPq7xJxONskuULYCTgeG6sMb6YWZ1hOGDoZaODNP4I97dmYMzqp2I4hoXeDMagObBqFO+ou6V7VONgPhJscs6c3O+wVvRLv1/nLzIad+nnlFHtDqgGdCiOkpKC8+9MFmu5MDpfv+RhETNWUihDd1/dfgAqtyO5ah+Ied45wX2yeJypmB8X73NWyEJ5rtcpUnL2g=
