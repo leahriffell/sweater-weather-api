@@ -209,6 +209,9 @@ module Helpers
 
       expect(hourly).to have_key(:time)
       expect(hourly[:time]).to be_a(String)
+
+      expect(hourly).to have_key(:temperature)
+      expect(hourly[:temperature]).to be_a(Float)
       
       expect(hourly).to have_key(:wind_speed)
       expect(hourly[:wind_speed]).to be_a(String)
