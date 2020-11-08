@@ -125,7 +125,7 @@ module Helpers
     data = parsed[:data]
 
     expect(data).to have_key(:id)
-    expect(data[:id]).to eq(null)
+    expect(data[:id]).to eq(nil)
 
     expect(data).to have_key(:type)
     expect(data[:type]).to eq('forecast')
@@ -138,13 +138,13 @@ module Helpers
     expect(data[:attributes][:current_weather]).to be_a(Hash)
 
     expect(data[:attributes][:current_weather]).to have_key(:datetime)
-    expect(data[:attributes][:current_weather][:datetime]).to be_a(DateTime)
+    expect(data[:attributes][:current_weather][:datetime]).to be_a(String)
 
     expect(data[:attributes][:current_weather]).to have_key(:sunrise)
-    expect(data[:attributes][:current_weather][:sunrise]).to be_a(DateTime)
+    expect(data[:attributes][:current_weather][:sunrise]).to be_a(String)
 
     expect(data[:attributes][:current_weather]).to have_key(:sunset)
-    expect(data[:attributes][:current_weather][:sunset]).to be_a(DateTime)
+    expect(data[:attributes][:current_weather][:sunset]).to be_a(String)
 
     expect(data[:attributes][:current_weather]).to have_key(:temperature)
     expect(data[:attributes][:current_weather][:temperature]).to be_a(Float)
@@ -162,10 +162,10 @@ module Helpers
     expect(data[:attributes][:current_weather][:visibility]).to be_a(Numeric)
 
     expect(data[:attributes][:current_weather]).to have_key(:conditions)
-    expect(data[:attributes][:current_weather][:conditions]).to be_a(Numeric)
+    expect(data[:attributes][:current_weather][:conditions]).to be_a(String)
 
     expect(data[:attributes][:current_weather]).to have_key(:icon)
-    expect(data[:attributes][:current_weather][:icon]).to be_a(Numeric)
+    expect(data[:attributes][:current_weather][:icon]).to be_a(String)
 
     # ----- daily weather hash -----
     expect(data[:attributes]).to have_key(:daily_weather)
@@ -177,13 +177,13 @@ module Helpers
       expect(daily).to be_a(Hash)
 
       expect(daily).to have_key(:date)
-      expect(daily[:date]).to be_a(DateTime)
+      expect(daily[:date]).to be_a(String)
       
       expect(daily).to have_key(:sunrise)
-      expect(daily[:sunrise]).to be_a(DateTime)
+      expect(daily[:sunrise]).to be_a(String)
 
       expect(daily).to have_key(:sunset)
-      expect(daily[:sunset]).to be_a(DateTime)
+      expect(daily[:sunset]).to be_a(String)
 
       expect(daily).to have_key(:max_temp)
       expect(daily[:max_temp]).to be_a(Float)
@@ -208,7 +208,7 @@ module Helpers
       expect(hourly).to be_a(Hash)
 
       expect(hourly).to have_key(:time)
-      expect(hourly[:time]).to be_a(Time)
+      expect(hourly[:time]).to be_a(String)
       
       expect(hourly).to have_key(:wind_speed)
       expect(hourly[:wind_speed]).to be_a(String)
