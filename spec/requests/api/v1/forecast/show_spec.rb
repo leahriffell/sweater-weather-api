@@ -21,7 +21,19 @@ describe 'Forecast API' do
     end
 
     it 'filters out necessary info' do
+      params = {
+        'location' => 'denver,co'
+      }
 
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
+
+      get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+
+      parsed = JSON.parse(response.body, symbolize_names: true) 
+      forecast_exposure_excluded_fields(parsed)
     end
   end
 end

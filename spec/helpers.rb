@@ -225,5 +225,38 @@ module Helpers
   end
 
   def forecast_exposure_excluded_fields(parsed)
+    details = parsed[:data][:attributes]
+    expect(details).to_not have_key(:lat)
+    expect(details).to_not have_key(:lon)
+    expect(details).to_not have_key(:timezone)
+    expect(details).to_not have_key(:timezone_offset)
+    expect(details).to_not have_key(:minutely)
+
+    expect(details[:current_weather]).to_not have_key(:pressure)
+    expect(details[:current_weather]).to_not have_key(:dew_point)
+    expect(details[:current_weather]).to_not have_key(:clouds)
+    expect(details[:current_weather]).to_not have_key(:wind_gust)
+    expect(details[:current_weather]).to_not have_key(:weather)
+
+    expect(details[:hourly_weather][0]).to_not have_key(:feels_like)
+    expect(details[:hourly_weather][0]).to_not have_key(:pressure)
+    expect(details[:hourly_weather][0]).to_not have_key(:humidity)
+    expect(details[:hourly_weather][0]).to_not have_key(:dew_point)
+    expect(details[:hourly_weather][0]).to_not have_key(:clouds)
+    expect(details[:hourly_weather][0]).to_not have_key(:visibility)
+    expect(details[:hourly_weather][0]).to_not have_key(:weather)
+    expect(details[:hourly_weather][0]).to_not have_key(:pop)
+
+    expect(details[:daily_weather][0]).to_not have_key(:temp)
+    expect(details[:daily_weather][0]).to_not have_key(:feels_like)
+    expect(details[:daily_weather][0]).to_not have_key(:pressure)
+    expect(details[:daily_weather][0]).to_not have_key(:humidity)
+    expect(details[:daily_weather][0]).to_not have_key(:dew_point)
+    expect(details[:daily_weather][0]).to_not have_key(:wind_speed)
+    expect(details[:daily_weather][0]).to_not have_key(:wind_deg)
+    expect(details[:daily_weather][0]).to_not have_key(:weather)
+    expect(details[:daily_weather][0]).to_not have_key(:clouds)
+    expect(details[:daily_weather][0]).to_not have_key(:pop)
+    expect(details[:daily_weather][0]).to_not have_key(:uvi)
   end
 end
