@@ -1,7 +1,7 @@
-class GeocodeService
+class MapService
   def self.forward_geocode(city_state)
     response = conn.get("/geocoding/v1/address?") do |request|
-      request.params['key'] = ENV['GEOCODE_API_KEY']
+      request.params['key'] = ENV['MAP_API_KEY']
       request.params['location'] = city_state.delete(" ")
     end
     parsed = parse(response)

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe GeocodeService do
+RSpec.describe MapService do
   describe 'happy paths' do
     it 'can fetch the lat and long for a city' do
       # VCR.use_cassette('geocode_denver') do
-        response = GeocodeService.forward_geocode('Denver, CO')
+        response = MapService.forward_geocode('Denver, CO')
         expect(response).to have_key(:lat)
         expect(response[:lat]).to be_a(Float)
         expect(response).to have_key(:lng)
