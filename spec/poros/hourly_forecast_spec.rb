@@ -23,8 +23,8 @@ RSpec.describe 'Hourly Forecast poro' do
 
     expect(forecast.time).to eq('15:00:00')
     expect(forecast.temperature).to eq(attr[:temp])
-    expect(forecast.wind_speed).to eq(attr[:wind_speed].to_s)
-    expect(forecast.wind_direction).to eq('S')
+    expect(forecast.wind_speed).to eq("#{attr[:wind_speed]} mph")
+    expect(forecast.wind_direction).to eq('from S')
     expect(forecast.conditions).to eq(attr[:weather][0][:description])
     expect(forecast.icon).to eq(attr[:weather][0][:icon])
   end
