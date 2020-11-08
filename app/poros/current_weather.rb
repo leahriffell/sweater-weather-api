@@ -11,9 +11,9 @@ class CurrentWeather
               :icon
 
   def initialize(details)
-    @datetime = convert_time(details[:dt])
-    @sunrise = convert_time(details[:sunrise])
-    @sunset = convert_time(details[:sunset])
+    @datetime = convert_to_datetime(details[:dt])
+    @sunrise = convert_to_datetime(details[:sunrise])
+    @sunset = convert_to_datetime(details[:sunset])
     @temperature = details[:temp]
     @feels_like = details[:feels_like]
     @humidity = details[:humidity]
@@ -23,7 +23,7 @@ class CurrentWeather
     @icon = details[:weather][0][:icon]
   end
 
-  def convert_time(unix_timestamp)
+  def convert_to_datetime(unix_timestamp)
     Time.at(unix_timestamp)
     # converts using local timezone
   end
