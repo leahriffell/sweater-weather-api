@@ -17,8 +17,8 @@ module Helpers
     expect(response[:results][0][:locations][0][:latLng]).to have_key(:lat)
     expect(response[:results][0][:locations][0][:latLng]).to have_key(:lng)
 
-    expect(response[:results][0][:locations][0][:latLng][:lat]).to be_an(Float)
-    expect(response[:results][0][:locations][0][:latLng][:lng]).to be_an(Float)
+    expect(response[:results][0][:locations][0][:latLng][:lat]).to be_an(Numeric)
+    expect(response[:results][0][:locations][0][:latLng][:lng]).to be_an(Numeric)
   end
 
   def forecast_response_structure(response)
@@ -36,10 +36,10 @@ module Helpers
     expect(response[:current][:sunset]).to be_an(Integer)
 
     expect(response[:current]).to have_key(:temp)
-    expect(response[:current][:temp]).to be_a(Float)
+    expect(response[:current][:temp]).to be_a(Numeric)
 
     expect(response[:current]).to have_key(:feels_like)
-    expect(response[:current][:feels_like]).to be_a(Float)
+    expect(response[:current][:feels_like]).to be_a(Numeric)
 
     expect(response[:current]).to have_key(:humidity)
     expect(response[:current][:humidity]).to be_a(Numeric)
@@ -77,10 +77,10 @@ module Helpers
       expect(daily[:temp]).to be_a(Hash)
 
       expect(daily[:temp]).to have_key(:max)
-      expect(daily[:temp][:max]).to be_a(Float)
+      expect(daily[:temp][:max]).to be_a(Numeric)
 
       expect(daily[:temp]).to have_key(:min)
-      expect(daily[:temp][:min]).to be_a(Float)
+      expect(daily[:temp][:min]).to be_a(Numeric)
 
       expect(daily).to have_key(:weather)
       expect(daily[:weather]).to be_an(Array)
@@ -100,7 +100,7 @@ module Helpers
       expect(hourly[:dt]).to be_an(Integer)
 
       expect(hourly).to have_key(:wind_speed)
-      expect(hourly[:wind_speed]).to be_a(Float)
+      expect(hourly[:wind_speed]).to be_a(Numeric)
 
       expect(hourly).to have_key(:wind_deg)
       expect(hourly[:wind_deg]).to be_an(Integer)
@@ -147,10 +147,10 @@ module Helpers
     expect(data[:attributes][:current_weather][:sunset]).to be_a(String)
 
     expect(data[:attributes][:current_weather]).to have_key(:temperature)
-    expect(data[:attributes][:current_weather][:temperature]).to be_a(Float)
+    expect(data[:attributes][:current_weather][:temperature]).to be_a(Numeric)
 
     expect(data[:attributes][:current_weather]).to have_key(:feels_like)
-    expect(data[:attributes][:current_weather][:feels_like]).to be_a(Float)
+    expect(data[:attributes][:current_weather][:feels_like]).to be_a(Numeric)
 
     expect(data[:attributes][:current_weather]).to have_key(:humidity)
     expect(data[:attributes][:current_weather][:humidity]).to be_a(Numeric)
@@ -186,10 +186,10 @@ module Helpers
       expect(daily[:sunset]).to be_a(String)
 
       expect(daily).to have_key(:max_temp)
-      expect(daily[:max_temp]).to be_a(Float)
+      expect(daily[:max_temp]).to be_a(Numeric)
 
       expect(daily).to have_key(:min_temp)
-      expect(daily[:min_temp]).to be_a(Float)
+      expect(daily[:min_temp]).to be_a(Numeric)
 
       expect(daily).to have_key(:conditions)
       expect(daily[:conditions]).to be_a(String)
@@ -211,7 +211,7 @@ module Helpers
       expect(hourly[:time]).to be_a(String)
 
       expect(hourly).to have_key(:temperature)
-      expect(hourly[:temperature]).to be_a(Float)
+      expect(hourly[:temperature]).to be_a(Numeric)
       
       expect(hourly).to have_key(:wind_speed)
       expect(hourly[:wind_speed]).to be_a(String)

@@ -16,7 +16,21 @@ describe 'Forecast API' do
 
       expect(response).to be_successful
       parsed = JSON.parse(response.body, symbolize_names: true) 
+      forecast_exposure_structure(parsed)
 
+      params = {
+        'location' => 'Bloomington, IN'
+      }
+
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
+
+      get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+
+      expect(response).to be_successful
+      parsed = JSON.parse(response.body, symbolize_names: true) 
       forecast_exposure_structure(parsed)
     end
 
