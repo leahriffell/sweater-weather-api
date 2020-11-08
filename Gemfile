@@ -35,6 +35,7 @@ gem 'fast_jsonapi'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'travis'
 end
 
 group :development do
@@ -48,8 +49,11 @@ group :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'simplecov'
+  gem 'capybara'
   gem 'shoulda-matchers'
-  gem "nyan-cat-formatter"
+  gem 'nyan-cat-formatter'
+  # gem 'webmock'
+  # gem 'vcr'
 end
 
 
