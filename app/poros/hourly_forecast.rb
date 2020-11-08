@@ -7,7 +7,7 @@ class HourlyForecast
 
   def initialize(details)
     @time = convert_to_time(details[:dt])
-    @wind_speed = details[:wind_speed]
+    @wind_speed = details[:wind_speed].to_s
     @wind_direction = convert_to_cardinal_directions(details[:wind_deg])
     @conditions = details[:weather][0][:description]
     @icon = details[:weather][0][:icon]
