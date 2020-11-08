@@ -21,21 +21,23 @@ class HourlyForecast
 
   def convert_to_cardinal_directions(degrees)
     case degrees
-    when 348.75..33.75
+    when 348.75..360
       'N'
-    when 33.75..87.75
+    when 0..33.74
+      'N'
+    when 33.75..78.74
       'NE'
-    when 78.75..123.75
+    when 78.75..123.74
       'E'
-    when 123.75..168.75
+    when 123.75..168.74
       'SE'
-    when 168.75..213.75
+    when 168.75..213.74
       'S'
-    when 213.75..258.75
+    when 213.75..258.74
       'SW'
-    when 258.75..303.75
+    when 258.75..303.74
       'W'
-    when 303.75..348.75
+    when 303.75..348.74
       'NW'
     end
   end
