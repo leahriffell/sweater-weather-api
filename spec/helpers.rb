@@ -310,7 +310,7 @@ module Helpers
     expect(details).to be_a(Hash)
 
     expect(details).to have_key(:description)
-    expect(details[:description]).to be_a(String)
+    expect(details[:description]).to be_a(String).or eq(nil)
 
     expect(details).to have_key(:url)
     expect(details[:url]).to be_a(String)
