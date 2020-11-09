@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
       user.generate_api_key
       render json: UserSerializer.new(user), status: 201
     else
-      render json: user.errors.full_messages.to_sentence, status: 400
+      render json: {errors: user.errors.full_messages.to_sentence}, status: 400
     end
   end
 end
