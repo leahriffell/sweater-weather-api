@@ -327,4 +327,12 @@ module Helpers
     expect(details[:credits]).to have_key(:profile_url)
     expect(details[:credits][:profile_url]).to be_a(String)
   end
+
+  def image_exposure_excluded_fields(parsed)
+    details = parsed[:data][:attributes]
+
+    expect(details).to_not have_key(:total)
+    expect(details).to_not have_key(:total_pages)
+    expect(details).to_not have_key(:results)
+  end
 end

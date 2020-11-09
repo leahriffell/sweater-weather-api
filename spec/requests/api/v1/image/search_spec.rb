@@ -12,58 +12,42 @@ describe 'Image API' do
         'ACCEPT' => 'application/json'
       }
 
-      get '/api/v1/backgrounds?location=denver,co', headers: headers, params: params
+      get '/api/v1/backgrounds?', headers: headers, params: params
 
       expect(response).to be_successful
       parsed = JSON.parse(response.body, symbolize_names: true) 
       image_exposure_structure(parsed)
 
-    #   params = {
-    #     'location' => 'Bloomington, IN'
-    #   }
+      params = {
+        'location' => 'New York, New York'
+      }
 
-    #   headers = {
-    #     'CONTENT_TYPE' => 'application/json',
-    #     'ACCEPT' => 'application/json'
-    #   }
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
 
-    #   get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+      get '/api/v1/backgrounds?', headers: headers, params: params
 
-    #   expect(response).to be_successful
-    #   parsed = JSON.parse(response.body, symbolize_names: true) 
-    #   forecast_exposure_structure(parsed)
-
-
-    #   params = {
-    #     'location' => 'New York, ny'
-    #   }
-
-    #   headers = {
-    #     'CONTENT_TYPE' => 'application/json',
-    #     'ACCEPT' => 'application/json'
-    #   }
-
-    #   get '/api/v1/forecast?location=denver,co', headers: headers, params: params
-
-    #   expect(response).to be_successful
-    #   parsed = JSON.parse(response.body, symbolize_names: true) 
-    #   forecast_exposure_structure(parsed)
+      expect(response).to be_successful
+      parsed = JSON.parse(response.body, symbolize_names: true) 
+      image_exposure_structure(parsed)
     end
 
     it 'filters out necessary info' do
-      # params = {
-      #   'location' => 'denver,co'
-      # }
+      params = {
+        'location' => 'New York, New York'
+      }
 
-      # headers = {
-      #   'CONTENT_TYPE' => 'application/json',
-      #   'ACCEPT' => 'application/json'
-      # }
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
 
-      # get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+      get '/api/v1/backgrounds?', headers: headers, params: params
 
-      # parsed = JSON.parse(response.body, symbolize_names: true) 
-      # forecast_exposure_excluded_fields(parsed)
+      parsed = JSON.parse(response.body, symbolize_names: true) 
+      image_exposure_excluded_fields(parsed)
     end
   end
 end
