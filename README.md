@@ -1,3 +1,10 @@
+## Readme Content
+- [API Endpoints](#api-endpoints)
+  - [Get Forecast](#get-forecast)
+  - [Get Location Background Image](#get-location-background-image)
+  - [User Management: Register New User](#user-management-register-new-user)
+- [Contributors](#contributors)
+
 ## API Endpoints
 - This API is available at `https://sweater-weather-lriff.herokuapp.com/`
 - Responses are sent as JSON
@@ -5,7 +12,7 @@
 ### Get Forecast
 #### Returns the forecast for a given location
 - Returns the current weather, daily forecast for the next 5 days, and the hourly forecast for the next 8 hours
-- Required arguments:
+- Required parameters:
   - location: city and state (ex: 'New York, NY')
 - Example request: GET `https://sweater-weather-lriff.herokuapp.com/api/v1/forecast?location=denver,co`
 - Example response: 
@@ -91,11 +98,13 @@
   | wind_speed    | insert        |
   | wind_direction| insert        |
 
+_____
+
 ### Get Location Background Image
 #### Returns a background image for a given location
 - Requirements for use:
   - [properly provide attribution for the photographer and Unsplash](https://help.unsplash.com/en/articles/2511315-guideline-attribution)
-- Required arguments:
+- Required parameters:
   - location: location (ex: 'New York, NY')
 - Example request: GET `https://sweater-weather-lriff.herokuapp.com/api/v1/backgrounds?location=new%20york,%20new%20york`
 - Example response: 
@@ -116,7 +125,8 @@
     }
   }
   ```
-  - Definition of Attributes 
+- Definition of Attributes 
+
   | Attribute      | Definition
   | -------------  |:-------------:|
   | description    | insert        |
@@ -124,3 +134,50 @@
   | artist_username| insert        |
   | artist_name    | insert        |
   | profile_url    | insert        |
+
+_____
+
+### User Management: Register New User
+#### Register a new user and generate their API key
+- Required arguments:
+  - Send user information as JSON payload in body of the request
+      - email
+      - password
+      - password confirmation
+
+- Example request:
+  ```
+  POST https://sweater-weather-lriff.herokuapp.com/api/v1/users
+  Content-Type: application/json
+  Accept: application/json
+
+  {
+    'email': 'user@example.com',
+    'password': 'password',
+    'password_confirmation': 'password'
+  }
+  ```
+- Example response: 
+  ```
+  {
+      "data": {
+          "id": "3",
+          "type": "users",
+          "attributes": {
+              "email": "user@example.com",
+              "api_key": "d4982803-cdb8-461a-a3f6-e4ce334eeaee"
+          }
+      }
+  }
+  ```
+- Definition of Attributes 
+
+  | Attribute      | Definition
+  | -------------  |:-------------:|
+  | email          | insert        |
+  | api_key        | insert        |
+
+_____
+
+## Contributors
+- Leah Riffell | [github](https://github.com/leahriffell) | [linkedin](https://www.linkedin.com/in/leah-riffell/)

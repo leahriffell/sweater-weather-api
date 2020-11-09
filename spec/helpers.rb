@@ -335,4 +335,31 @@ module Helpers
     expect(details).to_not have_key(:total_pages)
     expect(details).to_not have_key(:results)
   end
+
+  def new_user_exposure_structure(parsed)
+    expect(parsed).to be_a(Hash)
+    expect(parsed).to have_key(:data)
+    expect(parsed[:data]).to be_a(Hash)
+
+    expect(parsed[:data]).to have_key(:type)
+    expect(parsed[:data][:type]).to eq('users')
+
+    expect(parsed[:data]).to have_key(:id)
+    expect(parsed[:data][:id]).to be_a(String)
+
+    expect(parsed[:data]).to have_key(:attributes)
+    expect(parsed[:data][:attributes]).to be_a(Hash)
+
+    expect(parsed[:data][:attributes]).to have_key(:email)
+    expect(parsed[:data][:attributes][:email]).to be_a(String)
+
+    expect(parsed[:data][:attributes]).to have_key(:api_key)
+    expect(parsed[:data][:attributes][:api_key]).to be_a(String)
+
+    expect(parsed[:data][:attributes]).to_not have_key(:password)
+    expect(parsed[:data][:attributes]).to_not have_key(:password_digest)
+    expect(parsed[:data][:attributes]).to_not have_key(:password_confirmation)
+    expect(parsed[:data][:attributes]).to_not have_key(:created_at)
+    expect(parsed[:data][:attributes]).to_not have_key(:updated_at)
+  end
 end
