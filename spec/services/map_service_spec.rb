@@ -18,7 +18,7 @@ RSpec.describe MapService do
     end
 
     it 'more than one match?' do
-      # ex: Denver CO returns Denver city and Denver county
+      # ex: Denver CO returns Denver city and Denver county.
     end
   end
 end
