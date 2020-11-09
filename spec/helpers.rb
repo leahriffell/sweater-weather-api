@@ -92,7 +92,6 @@ module Helpers
       expect(daily[:weather][0][:icon]).to be_a(String)
     end
 
-
     response[:hourly][0..7].each do |hourly|
       expect(hourly).to be_a(Hash)
 
@@ -114,6 +113,38 @@ module Helpers
       expect(hourly[:weather][0]).to have_key(:icon)
       expect(hourly[:weather][0][:icon]).to be_a(String)
     end
+  end
+
+  def image_response_structure(response)
+    expect(response[:results]).to be_an(Array)
+    expect(response[:results].count).to eq(1)
+
+    first_result = response[:results][0]
+    expect(first_result).to be_a(Hash)
+
+    expect(first_result).to have_key(:description)
+    expect(first_result[:description]).to be_a(String)
+
+    expect(first_result).to have_key(:urls)
+    expect(first_result[:urls]).to be_a(Hash)
+
+    expect(first_result[:urls]).to have_key(:regular)
+    expect(first_result[:urls][:regular]).to be_a(String)
+
+    expect(first_result).to have_key(:user)
+    expect(first_result[:user]).to be_a(Hash)
+
+    expect(first_result[:user]).to have_key(:username)
+    expect(first_result[:user][:username]).to be_a(String)
+
+    expect(first_result[:user]).to have_key(:name)
+    expect(first_result[:user][:name]).to be_a(String)
+
+    expect(first_result[:user]).to have_key(:links)
+    expect(first_result[:user][:links]).to be_a(Hash)
+
+    expect(first_result[:user][:links]).to have_key(:html)
+    expect(first_result[:user][:links][:html]).to be_a(String)
   end
 
   # ----- API exposure helper methods -----
@@ -261,5 +292,47 @@ module Helpers
     expect(details[:daily_weather][0]).to_not have_key(:clouds)
     expect(details[:daily_weather][0]).to_not have_key(:pop)
     expect(details[:daily_weather][0]).to_not have_key(:uvi)
+  end
+
+  def image_exposure_structure(parsed)
+    expect(parsed).to have_key(:data)
+    expect(parsed[:data]).to be_a(Hash)
+
+    data = parsed[:data]
+
+    expect(data).to have_key(:id)
+    expect(data[:id]).to eq(nil)
+
+    expect(data).to have_key(:type)
+    expect(data[:type]).to eq('image')
+
+    details = data[:attributes]
+    expect(details).to be_a(Hash)
+
+    expect(details).to have_key(:description)
+    expect(details[:description]).to be_a(String).or eq(nil)
+
+    expect(details).to have_key(:url)
+    expect(details[:url]).to be_a(String)
+
+    expect(details).to have_key(:credits)
+    expect(details[:credits]).to be_a(Hash)
+
+    expect(details[:credits]).to have_key(:artist_username)
+    expect(details[:credits][:artist_username]).to be_a(String)
+
+    expect(details[:credits]).to have_key(:artist_name)
+    expect(details[:credits][:artist_name]).to be_a(String)
+
+    expect(details[:credits]).to have_key(:profile_url)
+    expect(details[:credits][:profile_url]).to be_a(String)
+  end
+
+  def image_exposure_excluded_fields(parsed)
+    details = parsed[:data][:attributes]
+
+    expect(details).to_not have_key(:total)
+    expect(details).to_not have_key(:total_pages)
+    expect(details).to_not have_key(:results)
   end
 end

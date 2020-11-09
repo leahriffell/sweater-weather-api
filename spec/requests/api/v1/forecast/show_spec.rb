@@ -12,7 +12,7 @@ describe 'Forecast API' do
         'ACCEPT' => 'application/json'
       }
 
-      get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+      get '/api/v1/forecast?', headers: headers, params: params
 
       expect(response).to be_successful
       parsed = JSON.parse(response.body, symbolize_names: true) 
@@ -27,7 +27,7 @@ describe 'Forecast API' do
         'ACCEPT' => 'application/json'
       }
 
-      get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+      get '/api/v1/forecast?', headers: headers, params: params
 
       expect(response).to be_successful
       parsed = JSON.parse(response.body, symbolize_names: true) 
@@ -43,7 +43,7 @@ describe 'Forecast API' do
         'ACCEPT' => 'application/json'
       }
 
-      get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+      get '/api/v1/forecast?', headers: headers, params: params
 
       expect(response).to be_successful
       parsed = JSON.parse(response.body, symbolize_names: true) 
@@ -60,7 +60,7 @@ describe 'Forecast API' do
         'ACCEPT' => 'application/json'
       }
 
-      get '/api/v1/forecast?location=denver,co', headers: headers, params: params
+      get '/api/v1/forecast?', headers: headers, params: params
 
       parsed = JSON.parse(response.body, symbolize_names: true) 
       forecast_exposure_excluded_fields(parsed)
