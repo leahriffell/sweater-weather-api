@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Trails Facade' do
+  it 'returns trail search detail object for a location' do 
+    search_results = TrailsFacade.weather_and_trails('New York, NY')
+
+    expect(search_results).to be_a(TrailSearchDetails)
+  end
+
   it 'returns trail objects that are near a location' do
     trails = TrailsFacade.nearby_trails('Denver, CO')
 
