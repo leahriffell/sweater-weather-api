@@ -282,4 +282,52 @@ module Helpers
     expect(details[:daily_weather][0]).to_not have_key(:pop)
     expect(details[:daily_weather][0]).to_not have_key(:uvi)
   end
+
+  def trails_exposure_structure(parsed)
+    expect(parsed).to have_key(:data)
+    expect(parsed[:data]).to be_a(Hash)
+
+    data = parsed[:data]
+
+    expect(data).to have_key(:id)
+    expect(data[:id]).to eq(nil)
+
+    expect(data).to have_key(:type)
+    expect(data[:type]).to eq('trail')
+
+    expect(data).to have_key(:attributes)
+    expect(data[:attributes]).to be_a(Hash)
+
+    expect(data[:attributes]).to have_key(:location)
+    expect(data[:attributes][:location]).to be_a(String)
+
+    expect(data[:attributes]).to have_key(:forecast)
+    expect(data[:attributes][:forecast]).to be_a(Hash)
+
+    expect(data[:attributes][:forecast]).to have_key(:summary)
+    expect(data[:attributes][:forecast][:summary]).to be_a(String)
+
+    expect(data[:attributes][:forecast]).to have_key(:temperature)
+    expect(data[:attributes][:forecast][:temperature]).to be_a(Numeric)
+
+    expect(data[:attributes]).to have_key(:trails)
+    expect(data[:attributes][:trails]).to be_an(Array)
+
+    data[:attributes][:trails].each do |trail|
+      expect(trail).to have_key(:name)
+      expect(trail[:name]).to be_a(String)
+
+      expect(trail).to have_key(:summary)
+      expect(trail[:summary]).to be_a(String)
+
+      expect(trail).to have_key(:difficulty)
+      expect(trail[:difficulty]).to be_a(String)
+
+      expect(trail).to have_key(:location)
+      expect(trail[:location]).to be_a(String)
+
+      expect(trail).to have_key(:distance_to_trail)
+      expect(trail[:distance_to_trail]).to be_a(Numeric)
+    end
+  end
 end
