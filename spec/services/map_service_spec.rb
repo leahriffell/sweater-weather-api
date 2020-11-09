@@ -11,6 +11,12 @@ RSpec.describe MapService do
         expect(response[:lng]).to be_a(Numeric)
       # end
     end
+
+    it 'can get distance between two lat and long points' do
+      response = MapService.distance_between(39.738453, -104.984853, 39.487, -105.0908)
+
+      expect(response).to be_a(Float)
+    end
   end
 
   describe 'sad paths' do
