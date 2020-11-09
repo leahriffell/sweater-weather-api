@@ -92,7 +92,6 @@ module Helpers
       expect(daily[:weather][0][:icon]).to be_a(String)
     end
 
-
     response[:hourly][0..7].each do |hourly|
       expect(hourly).to be_a(Hash)
 
@@ -293,5 +292,39 @@ module Helpers
     expect(details[:daily_weather][0]).to_not have_key(:clouds)
     expect(details[:daily_weather][0]).to_not have_key(:pop)
     expect(details[:daily_weather][0]).to_not have_key(:uvi)
+  end
+
+  def image_exposure_structure(parsed)
+    expect(parsed).to have_key(:data)
+    expect(parsed[:data]).to be_a(Hash)
+
+    data = parsed[:data]
+
+    expect(data).to have_key(:id)
+    expect(data[:id]).to eq(nil)
+
+    expect(data).to have_key(:type)
+    expect(data[:type]).to eq('image')
+
+    details = data[:attributes]
+    expect(details).to be_a(Hash)
+
+    expect(details).to have_key(:description)
+    expect(details[:description]).to be_a(String)
+
+    expect(details).to have_key(:url)
+    expect(details[:url]).to be_a(String)
+
+    expect(details).to have_key(:credits)
+    expect(details[:credits]).to be_a(Hash)
+
+    expect(details[:credits]).to have_key(:artist_username)
+    expect(details[:credits][:artist_username]).to be_a(String)
+
+    expect(details[:credits]).to have_key(:artist_name)
+    expect(details[:credits][:artist_name]).to be_a(String)
+
+    expect(details[:credits]).to have_key(:profile_url)
+    expect(details[:credits][:profile_url]).to be_a(String)
   end
 end
