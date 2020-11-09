@@ -116,6 +116,26 @@ module Helpers
     end
   end
 
+  def trails_response_structure(response)
+    expect(response).to be_a(Hash)
+    expect(response).to have_key(:trails)
+    expect(response[:trails]).to be_an(Array)
+
+    first_trail = response[:trails][0]
+
+    expect(first_trail).to have_key(:name)
+    expect(first_trail[:name]).to be_a(String)
+
+    expect(first_trail).to have_key(:summary)
+    expect(first_trail[:summary]).to be_a(String)
+
+    expect(first_trail).to have_key(:difficulty)
+    expect(first_trail[:difficulty]).to be_a(String)
+
+    expect(first_trail).to have_key(:location)
+    expect(first_trail[:location]).to be_a(String)
+  end
+
   # ----- API exposure helper methods -----
 
   def forecast_exposure_structure(parsed)
