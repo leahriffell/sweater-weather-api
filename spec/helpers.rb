@@ -330,4 +330,8 @@ module Helpers
       expect(trail[:distance_to_trail]).to be_a(Numeric)
     end
   end
+
+  def trails_exposure_excluded_fields(parsed)
+    # add fields that should be excluded from response
+  end
 end

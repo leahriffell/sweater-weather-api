@@ -54,7 +54,7 @@ describe 'Forecast API' do
         get '/api/v1/forecast?location=denver,co', headers: headers, params: params
 
         parsed = JSON.parse(response.body, symbolize_names: true) 
-        forecast_exposure_excluded_fields(parsed)
+        trails_exposure_excluded_fields(parsed)
       end
     end
   end
