@@ -336,7 +336,7 @@ module Helpers
     expect(details).to_not have_key(:results)
   end
 
-  def new_user_exposure_structure(parsed)
+  def user_exposure_structure(parsed)
     expect(parsed).to be_a(Hash)
     expect(parsed).to have_key(:data)
     expect(parsed[:data]).to be_a(Hash)

@@ -9,4 +9,14 @@ class Api::V1::UsersController < ApplicationController
       render json: {errors: user.errors.full_messages.to_sentence}, status: 400
     end
   end
+
+  def login
+    user_details = JSON.parse(request.raw_post, symbolize_names: true)
+    user = User.find_by(email: user_details[:email])
+    if user && user.authenticate(user_details[:password])
+      render json: UserSerializer.new(user), status: 201
+    else
+      render json: {errors: 'Incorrect email and/or password'}, status: 400
+    end
+  end
 end
