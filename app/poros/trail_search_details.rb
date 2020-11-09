@@ -3,9 +3,9 @@ class TrailSearchDetails
               :forecast,
               :trails
 
-  def initialize(location, weather, trails)
+  def initialize(location)
     @location = location
-    @forecast = {summary: weather.conditions, temperature: weather.temperature}
-    @trails = trails
+    @forecast = { summary: ForecastFacade.forecast(location).current_weather.conditions, temperature: ForecastFacade.forecast(location).current_weather.temperature }
+    @trails = TrailsFacade.nearby_trails(location)
   end
 end
