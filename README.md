@@ -3,6 +3,7 @@
   - [Get Forecast](#get-forecast)
   - [Get Location Background Image](#get-location-background-image)
   - [User Management: Register New User](#user-management-register-new-user)
+  - [User Management: Login User](#user-management-login-user)
 - [Contributors](#contributors)
 
 ## API Endpoints
@@ -178,6 +179,46 @@ _____
   | api_key        | insert        |
 
 _____
+
+### User Management: Login User
+#### Login user and return their API key
+- Required arguments:
+  - Send user information as JSON payload in body of the request
+      - email
+      - password
+
+- Example request:
+  ```
+  POST https://sweater-weather-lriff.herokuapp.com/api/v1/sessions
+  Content-Type: application/json
+  Accept: application/json
+
+  {
+    "email": "whatever@example.com",
+    "password": "password"
+  }
+  ```
+- Example response: 
+  ```
+  {
+      "data": {
+          "id": "3",
+          "type": "users",
+          "attributes": {
+              "email": "user@example.com",
+              "api_key": "d4982803-cdb8-461a-a3f6-e4ce334eeaee"
+          }
+      }
+  }
+  ```
+- Definition of Attributes 
+
+  | Attribute      | Definition
+  | -------------  |:-------------:|
+  | email          | insert        |
+  | api_key        | insert        |
+
+______
 
 ## Contributors
 - Leah Riffell | [github](https://github.com/leahriffell) | [linkedin](https://www.linkedin.com/in/leah-riffell/)
