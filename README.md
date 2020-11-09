@@ -90,3 +90,37 @@
   | time          | insert        |
   | wind_speed    | insert        |
   | wind_direction| insert        |
+
+### Get Location Background Image
+#### Returns a background image for a given location
+- Requirements for use:
+  - [properly provide attribution for the photographer and Unsplash](https://help.unsplash.com/en/articles/2511315-guideline-attribution)
+- Required arguments:
+  - location: location (ex: 'New York, NY')
+- Example request: GET `https://sweater-weather-lriff.herokuapp.com/api/v1/backgrounds?location=new%20york,%20new%20york`
+- Example response: 
+  ```
+  {
+    "data": {
+      "id": null,
+      "type": "image",
+      "attributes": {
+        "description": null,
+        "url": "https://images.unsplash.com/photo-1553484604-9f524520c793?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE4MTA0N30",
+        "credits": {
+          "artist_username": "capdfrawy",
+            "artist_name": "CapDfrawy",
+            "profile_url": "https://unsplash.com/@capdfrawy"
+        }
+      }
+    }
+  }
+  ```
+  - Definition of Attributes 
+  | Attribute      | Definition
+  | -------------  |:-------------:|
+  | description    | insert        |
+  | url            | insert        |
+  | artist_username| insert        |
+  | artist_name    | insert        |
+  | profile_url    | insert        |
