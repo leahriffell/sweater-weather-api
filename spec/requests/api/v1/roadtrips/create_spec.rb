@@ -22,6 +22,23 @@ describe 'New Roadtrip API' do
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
     roadtrip_exposure_structure(parsed)
+
+    json_payload = {
+      'origin': 'Denver,CO',
+      'destination': 'Larkspur,CO',
+      'api_key': 'jgn983hy48thw9begh98h4539h4'
+    }
+
+    headers = {
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
+    }
+
+    post '/api/v1/road_trip', headers: headers, params: json_payload.to_json
+
+    expect(response).to be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    roadtrip_exposure_structure(parsed)
   end
 
   describe 'error handling' do

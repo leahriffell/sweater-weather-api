@@ -362,4 +362,42 @@ module Helpers
     expect(parsed[:data][:attributes]).to_not have_key(:created_at)
     expect(parsed[:data][:attributes]).to_not have_key(:updated_at)
   end
+
+  def roadtrip_exposure_structure(parsed)
+    expect(parsed).to be_a(Hash)
+    expect(parsed).to have_key(:data)
+    expect(parsed[:data]).to be_a(Hash)
+
+    expect(parsed[:data]).to have_key(:id)
+    expect(parsed[:data][:id]).to eq(nil)
+
+    expect(parsed[:data]).to have_key(:type)
+    expect(parsed[:data][:type]).to eq('roadtrip')
+
+    expect(parsed[:data]).to have_key(:attributes)
+    expect(parsed[:data][:attributes]).to be_a(Hash)
+
+    details = parsed[:data][:attributes]
+
+    expect(details).to have_key(:start_city)
+    expect(details[:start_city]).to be_a(String)
+
+    expect(details).to have_key(:end_city)
+    expect(details[:start_city]).to be_a(String)
+
+    expect(details).to have_key(:travel_time)
+    expect(details[:start_city]).to be_a(String)
+
+    expect(details).to have_key(:travel_time)
+    expect(details[:start_city]).to be_a(String)
+
+    expect(details).to have_key(:weather_at_eta)
+    expect(details[:weather_at_eta]).to be_a(Hash)
+
+    expect(details[:weather_at_eta]).to have_key(:temperature)
+    expect(details[:weather_at_eta][:temperature]).to be_a(Numeric)
+
+    expect(details[:weather_at_eta]).to have_key(:conditions)
+    expect(details[:weather_at_eta][:conditions]).to be_a(String)
+  end
 end
