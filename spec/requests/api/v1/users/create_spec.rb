@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'New User API' do
   it 'can register a new user' do
     json_payload = {
-      'email': 'whatever@example.com',
+      'email': 'human@example.com',
       'password': 'password',
       'password_confirmation': 'password'
     }
@@ -22,7 +22,7 @@ describe 'New User API' do
 
   it 'sends an error message if user signs up with conflicting passwords' do
     json_payload = {
-      'email': 'whatever@example.com',
+      'email': 'homosapien@example.com',
       'password': 'password',
       'password_confirmation': 'wrong'
     }
