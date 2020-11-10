@@ -48,6 +48,9 @@ RSpec.describe MapService do
       end
 
       it 'no matching cities' do
+        response = MapService.fetch_trip_duration('abcd', 'efgh')
+        expect(response[:duration]).to eq('impossible')
+        expect(response[:end_lat_lng]).to eq(nil)
       end
     end
   end

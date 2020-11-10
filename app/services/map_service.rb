@@ -37,10 +37,10 @@ class MapService
   end
 
   def self.end_coordinates(response)
-    if response[:route][:routeError]
+    if !response[:route][:locations]
       nil
     else
-      [:route][:locations][1][:latLng]
+      response[:route][:locations][1][:latLng]
     end
   end
 end
