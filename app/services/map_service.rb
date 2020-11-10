@@ -14,11 +14,7 @@ class MapService
       request.params['from'] = start_location
       request.params['to'] = end_location
     end
-    if parse(response)[:route][:formattedTime].nil?
-      'impossible'
-    else
-      parse(response)[:route][:formattedTime]
-    end
+    route_duration(parse(response)[:route][:formattedTime])
   end
 
   private
@@ -29,5 +25,13 @@ class MapService
 
   def self.parse(response)
     JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.route_duration(response)
+    if response.nil?
+      'impossible'
+    else
+      response
+    end
   end
 end
