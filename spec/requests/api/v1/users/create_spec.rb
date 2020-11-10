@@ -17,7 +17,7 @@ describe 'New User API' do
 
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
-    new_user_exposure_structure(parsed)
+    user_exposure_structure(parsed)
   end
 
   it 'sends an error message if user signs up with conflicting passwords' do
