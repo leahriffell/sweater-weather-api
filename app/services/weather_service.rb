@@ -13,7 +13,7 @@ class WeatherService
   def self.future_forecast(lat, long, time)
     hour = round_hour(time.gsub(':','.')[0..-4])
     if fetch_forecast(lat, long)[:hourly][hour].nil?
-      'ETA is too far out to receive forecast'
+      { temp: 'ETA is too far out to receive forecast', weather: [{ description: 'ETA is too far out to receive forecast' }]}
     else
       fetch_forecast(lat, long)[:hourly][hour]
     end

@@ -36,7 +36,19 @@ RSpec.describe WeatherService do
 
     it 'sends a message if forecast is too far out to predict (ex: Toronto > San Salvador' do
       response = WeatherService.future_forecast(13.6929, 89.2182, '57:50:37')
-      expect(response).to eq('ETA is too far out to receive forecast')
+
+      expect(response).to be_a(Hash)
+
+      expect(response).to have_key(:temp)
+      expect(response[:temp]).to be_a(String)
+
+      expect(response).to have_key(:weather)
+      expect(response[:weather]).to be_an(Array)
+
+      expect(response[:weather][0]).to be_a(Hash)
+
+      expect(response[:weather][0]).to have_key(:description)
+      expect(response[:weather][0][:description]).to be_a(String)
     end
   end
 end
