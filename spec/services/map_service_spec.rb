@@ -11,14 +11,32 @@ RSpec.describe MapService do
         expect(response[:lng]).to be_a(Numeric)
       # end
     end
+
+    it 'can fetch the trip duration for a road trip' do
+      response = MapService.fetch_trip_duration('Denver, CO', 'Middlebury, IN')
+      expect(response).to be_a(String)
+      expect(response.include?(':'))
+    end
   end
 
   describe 'sad paths' do
-    it 'no matching coordinates' do
+    describe 'forward_geocode' do
+      it 'more than one match?' do
+        # ex: Denver CO returns Denver city and Denver county.
+      end
+
+      it 'no matching coordinates' do
+      end
     end
 
-    it 'more than one match?' do
-      # ex: Denver CO returns Denver city and Denver county.
+    describe 'fetch_trip_duration' do
+      it "returns 'impossible' if roadtrip is not possible" do
+        response = MapService.fetch_trip_duration('New York, NY', 'Tokyo, Japan')
+        expect(response).to eq('impossible')
+      end
+
+      it 'no matching cities' do
+      end
     end
   end
 end
