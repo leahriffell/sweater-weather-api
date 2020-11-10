@@ -395,7 +395,7 @@ module Helpers
     expect(details[:weather_at_eta]).to be_a(Hash)
 
     expect(details[:weather_at_eta]).to have_key(:temperature)
-    expect(details[:weather_at_eta][:temperature]).to be_a(Numeric)
+    expect(details[:weather_at_eta][:temperature]).to be_a(Numeric).or be_a(String)
 
     expect(details[:weather_at_eta]).to have_key(:conditions)
     expect(details[:weather_at_eta][:conditions]).to be_a(String)

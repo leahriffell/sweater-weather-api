@@ -57,5 +57,24 @@ describe 'New Roadtrip API' do
     it "can return 'impossible' for trip without matching cities" do
       #test
     end
+
+    it 'sends a message if forecast is too far out to predict (ex: Toronto > San Salvador' do
+      json_payload = {
+        'origin': 'Toronto, Canada',
+        'destination': 'San Salvador, El Salvador',
+        'api_key': 'jgn983hy48thw9begh98h4539h4'
+      }
+  
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
+  
+      post '/api/v1/road_trip', headers: headers, params: json_payload.to_json
+  
+      expect(response).to be_successful
+      parsed = JSON.parse(response.body, symbolize_names: true)
+      roadtrip_exposure_structure(parsed)
+    end
   end
 end
