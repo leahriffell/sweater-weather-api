@@ -46,7 +46,8 @@ rails db:migrate
 rails s
 ```
 - You should be able to send requests to the app via http://localhost:3000/
-- You can also access the production app at [sweater-weather-lriff.herokuapp.com](https://sweater-weather-lriff.herokuapp.com/)
+- This is only an API (no frontend view)
+- You can also access the production API at [sweater-weather-lriff.herokuapp.com](https://sweater-weather-lriff.herokuapp.com/)
 
 ### Running the Tests
 - Run with $ bundle exec rspec. All tests should be passing.
