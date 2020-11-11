@@ -11,10 +11,4 @@ class RoadTripFacade
       RoadTripDetails.new(trip, weather)
     end
   end
-
-  private
-
-  def self.impossible_trip(start_city, end_city)
-    RoadTripDetails.new({start_city: start_city, end_city: end_city, travel_time: 'impossible'}, '')
-  end
 end
