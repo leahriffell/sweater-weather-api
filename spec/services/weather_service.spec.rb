@@ -3,10 +3,8 @@ require 'rails_helper'
 RSpec.describe WeatherService do
   describe 'happy paths' do
     it 'can fetch the forecast given lat and long' do
-      # VCR.use_cassette('geocode_forecast_denver') do
-        response = WeatherService.fetch_forecast(39.738453, -104.984853)
-        forecast_response_structure(response)
-      # end
+      response = WeatherService.fetch_forecast(39.738453, -104.984853)
+      forecast_response_structure(response)
     end
 
     it 'can fetch the forecast at a given point in future when given the lat, long, and time period' do
@@ -28,10 +26,6 @@ RSpec.describe WeatherService do
 
   describe 'sad paths' do
     it 'no matching coordinates' do
-    end
-
-    it 'more than one match?' do
-      # ex: Denver CO returns Denver city and Denver county
     end
 
     it 'sends a message if forecast is too far out to predict (ex: Toronto > San Salvador' do

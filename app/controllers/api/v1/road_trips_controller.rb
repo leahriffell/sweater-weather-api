@@ -7,10 +7,4 @@ class Api::V1::RoadTripsController < ApplicationController
       render json: RoadTripDetailsSerializer.new(RoadTripFacade.new_trip(trip_request[:origin], trip_request[:destination], request[:user_key]))
     end
   end
-
-  private
-
-  def authorized_user?(user_key)
-    User.exists?(api_key: user_key)
-  end
 end

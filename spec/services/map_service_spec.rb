@@ -13,7 +13,7 @@ RSpec.describe MapService do
     end
 
     it 'can fetch the trip duration for a road trip' do
-      VCR.use_cassette('route_long_distance_TO_SV') do
+      VCR.use_cassette('route_denver_middlebury') do
         response = MapService.fetch_trip_duration('Denver, CO', 'Middlebury, IN')
         expect(response).to be_a(Hash)
         expect(response).to have_key(:duration)
@@ -36,11 +36,16 @@ RSpec.describe MapService do
 
   describe 'sad paths' do
     describe 'forward_geocode' do
-      it 'more than one match?' do
-        # ex: Denver CO returns Denver city and Denver county.
-      end
-
       it 'no matching coordinates' do
+        VCR.use_cassette('geocode_no_match') do
+          response = MapService.forward_geocode('abcdefghijklmnop')
+
+          expect(response).to be_a(Hash)
+          expect(response).to have_key(:lat)
+          expect(response).to have_key(:lng)
+          expect(response[:lat]).to eq('no match')
+          expect(response[:lng]).to eq('no match')
+        end
       end
     end
 
