@@ -13,7 +13,7 @@ RSpec.describe MapService do
     end
 
     it 'can fetch the trip duration for a road trip' do
-      VCR.use_cassette('route_long_distance_TO_SV') do
+      VCR.use_cassette('route_denver_middlebury') do
         response = MapService.fetch_trip_duration('Denver, CO', 'Middlebury, IN')
         expect(response).to be_a(Hash)
         expect(response).to have_key(:duration)

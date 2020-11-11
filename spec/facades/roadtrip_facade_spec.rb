@@ -37,6 +37,19 @@ RSpec.describe 'Road Trip Facade' do
     end
   end
 
-  it 'does not return a road trip details poro when given an incorrect api key' do
+  it 'returns a road trip details poro when given a destination that does not have a matching geocode' do
+    VCR.use_cassette('route_no_match_destination') do
+      trip_details = RoadTripFacade.new_trip('New York, New York', 'abcdefghijklmnop', @user.api_key)
+
+      expect(trip_details).to be_a(RoadTripDetails)
+      expect(trip_details.start_city).to eq('New York, New York')
+      expect(trip_details.end_city).to eq('abcdefghijklmnop')
+      expect(trip_details.travel_time).to eq('impossible')
+      expect(trip_details.weather_at_eta).to be_a(Hash)
+      expect(trip_details.weather_at_eta).to have_key(:temperature)
+      expect(trip_details.weather_at_eta[:temperature]).to eq('')
+      expect(trip_details.weather_at_eta).to have_key(:conditions)
+      expect(trip_details.weather_at_eta[:conditions]).to eq('')
+    end
   end
 end

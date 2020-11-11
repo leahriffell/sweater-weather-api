@@ -15,7 +15,7 @@ class MapService
       request.params['to'] = end_location
     end
     parsed = parse(response)
-    { duration: trip_duration(parsed[:route][:formattedTime]), end_lat_lng: end_coordinates(parsed) }
+    { duration: trip_duration(parsed), end_lat_lng: end_coordinates(parsed) }
   end
 
   private
@@ -29,15 +29,15 @@ class MapService
   end
 
   def self.trip_duration(response)
-    if response.nil?
+    if response[:info][:statuscode] == 500 || response[:info][:statuscode] == 402
       'impossible'
     else
-      response
+      response[:route][:formattedTime]
     end
   end
 
   def self.end_coordinates(response)
-    if !response[:route][:locations]
+    if !response[:route] || !response[:route][:locations]
       nil
     else
       response[:route][:locations][1][:latLng]
