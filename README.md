@@ -128,25 +128,25 @@ _____
        {:time=>"03:00:00", :temperature=>56.39, :wind_speed=>"4.85 mph", :wind_direction=>"from SE", :conditions=>"clear sky", :icon=>"01n"},
        {:time=>"04:00:00", :temperature=>56.35, :wind_speed=>"4.76 mph", :wind_direction=>"from SE", :conditions=>"clear sky", :icon=>"01n"}]}}}
   ```
-- Definition of Attributes 
+- Fields in Response 
   | Attribute     | Definition
   | ------------- |:-------------:|
-  | datetime      | insert        |
-  | sunrise       | insert        |
-  | sunset        | insert        |
-  | temperature   | insert        |
-  | feels_like    | insert        |
-  | humidity      | insert        |
-  | uvi           | insert        |
-  | visibility    | insert        |
-  | conditions    | insert        |
-  | icon          | insert        |
-  | date          | insert        |
-  | max_temp      | insert        |
-  | min_temp      | insert        |
-  | time          | insert        |
-  | wind_speed    | insert        |
-  | wind_direction| insert        |
+  | datetime      | current date and time                                                                   |
+  | sunrise       | date and time of sunrise                                                                |
+  | sunset        | date and time of sunset                                                                 |
+  | temperature   | temp in Fahrenheit                                                                      |   
+  | feels_like    | temp in Fahrenheit                                                                      |
+  | humidity      | humidity percentage                                                                     |
+  | uvi           | midday UV index                                                                         |
+  | visibility    | average visibility in meters                                                            |
+  | conditions    | description of weather                                                                  |
+  | icon          | [weather icon](https://openweathermap.org/weather-conditions#How-to-get-icon-URL)       |
+  | date          | date at forecast                                                                        |
+  | max_temp      | max daily temp                                                                          |
+  | min_temp      | min daily temp                                                                          |
+  | time          | time at forecast                                                                        |
+  | wind_speed    | speed in mph                                                                            |
+  | wind_direction| cardinal direction of wind                                                              |
 
 _____
 
@@ -179,11 +179,11 @@ _____
 
   | Attribute      | Definition
   | -------------  |:-------------:|
-  | description    | insert        |
-  | url            | insert        |
-  | artist_username| insert        |
-  | artist_name    | insert        |
-  | profile_url    | insert        |
+  | description    | artist provided description of photo   |
+  | url            | link to photo                          |
+  | artist_username| artist's Unsplash username             |
+  | artist_name    | artist's first and last name           |
+  | profile_url    | link to artist's Unsplash profile      |
 
 _____
 
@@ -224,8 +224,8 @@ _____
 
   | Attribute      | Definition
   | -------------  |:-------------:|
-  | email          | insert        |
-  | api_key        | insert        |
+  | email          | user's email               |
+  | api_key        | user's unique api key      |
 
 _____
 
@@ -264,8 +264,8 @@ _____
 
   | Attribute      | Definition
   | -------------  |:-------------:|
-  | email          | insert        |
-  | api_key        | insert        |
+  | email          | user's email                 |
+  | api_key        | user's unique api key        |
 
 ______
 
@@ -311,11 +311,11 @@ ______
 
   | Attribute      | Definition
   | -------------  |:-------------:|
-  | start_city     | insert        |
-  | end_city       | insert        |
-  | travel_time    | insert        |
-  | temperature    | insert        |
-  | conditions     | insert        |
+  | start_city     | origin location                                         |
+  | end_city       | destination location                                    |
+  | travel_time    | total time of estimated travel                          |
+  | temperature    | forecasted temp in Fahrenheit at time of arrival        |
+  | conditions     | description of forecasted weather at time of arrival    |
 
 _____
 
