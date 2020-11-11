@@ -11,29 +11,31 @@ describe 'New Roadtrip API' do
   end
 
   it 'can create a new roadtrip and send back duration and weather conditions at ETA' do
-    json_payload = {
-      'origin': 'Denver,CO',
-      'destination': 'Middlebury,IN',
-      'api_key': 'jgn983hy48thw9begh98h4539h4'
-    }
+    VCR.use_cassette('route_denver_middlebury') do
+      json_payload = {
+        'origin': 'Denver,CO',
+        'destination': 'Middlebury,IN',
+        'api_key': 'jgn983hy48thw9begh98h4539h4'
+      }
 
-    post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
 
-    expect(response).to be_successful
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    roadtrip_exposure_structure(parsed)
+      expect(response).to be_successful
+      parsed = JSON.parse(response.body, symbolize_names: true)
+      roadtrip_exposure_structure(parsed)
 
-    json_payload = {
-      'origin': 'Denver,CO',
-      'destination': 'Larkspur,CO',
-      'api_key': 'jgn983hy48thw9begh98h4539h4'
-    }
+      json_payload = {
+        'origin': 'Denver,CO',
+        'destination': 'Larkspur,CO',
+        'api_key': 'jgn983hy48thw9begh98h4539h4'
+      }
 
-    post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
 
-    expect(response).to be_successful
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    roadtrip_exposure_structure(parsed)
+      expect(response).to be_successful
+      parsed = JSON.parse(response.body, symbolize_names: true)
+      roadtrip_exposure_structure(parsed)
+    end
   end
 
   describe 'error handling' do
@@ -42,9 +44,9 @@ describe 'New Roadtrip API' do
         'origin': 'Denver,CO',
         'destination': 'Larkspur,CO',
       }
-  
+
       post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
-  
+
       expect(response).to_not be_successful
       expect(response.status).to eq(401)
       parsed = JSON.parse(response.body, symbolize_names: true)
@@ -59,9 +61,9 @@ describe 'New Roadtrip API' do
         'destination': 'Larkspur,CO',
         'api_key': 'jgn983hy48thw9begh98h4539h4wrong'
       }
-  
+
       post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
-  
+
       expect(response).to_not be_successful
       expect(response.status).to eq(401)
       parsed = JSON.parse(response.body, symbolize_names: true)
@@ -71,53 +73,59 @@ describe 'New Roadtrip API' do
     end
 
     it "can return 'impossible' for travel time and no weather if impossible roadtrip is posted (ex: NYC > London)" do
-      json_payload = {
-        'origin': 'New York, NY',
-        'destination': 'London, UK',
-        'api_key': 'jgn983hy48thw9begh98h4539h4'
-      }
-  
-      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
-  
-      expect(response).to be_successful
-      parsed = JSON.parse(response.body, symbolize_names: true)
-      roadtrip_exposure_structure(parsed)
-      expect(parsed[:data][:attributes][:travel_time]).to eq('impossible')
-      expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('')
-      expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('')
+      VCR.use_cassette('route_impossible_NYC_TKO') do
+        json_payload = {
+          'origin': 'New York, NY',
+          'destination': 'Tokyo, Japan',
+          'api_key': 'jgn983hy48thw9begh98h4539h4'
+        }
+
+        post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+
+        expect(response).to be_successful
+        parsed = JSON.parse(response.body, symbolize_names: true)
+        roadtrip_exposure_structure(parsed)
+        expect(parsed[:data][:attributes][:travel_time]).to eq('impossible')
+        expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('')
+        expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('')
+      end
     end
 
     it "can return 'impossible' for trip without matching cities" do
-      json_payload = {
-        'origin': 'abcd',
-        'destination': 'efgh',
-        'api_key': 'jgn983hy48thw9begh98h4539h4'
-      }
-  
-      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
-  
-      expect(response).to be_successful
-      parsed = JSON.parse(response.body, symbolize_names: true)
-      roadtrip_exposure_structure(parsed)
-      expect(parsed[:data][:attributes][:travel_time]).to eq('impossible')
-      expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('')
-      expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('')
+      VCR.use_cassette('route_no_match_cities') do
+        json_payload = {
+          'origin': 'abcd',
+          'destination': 'efgh',
+          'api_key': 'jgn983hy48thw9begh98h4539h4'
+        }
+    
+        post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+    
+        expect(response).to be_successful
+        parsed = JSON.parse(response.body, symbolize_names: true)
+        roadtrip_exposure_structure(parsed)
+        expect(parsed[:data][:attributes][:travel_time]).to eq('impossible')
+        expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('')
+        expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('')
+      end
     end
 
     it 'sends a message if forecast is too far out to predict (ex: Toronto > San Salvador' do
-      json_payload = {
-        'origin': 'Toronto, Canada',
-        'destination': 'San Salvador, El Salvador',
-        'api_key': 'jgn983hy48thw9begh98h4539h4'
-      }
-  
-      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
-  
-      expect(response).to be_successful
-      parsed = JSON.parse(response.body, symbolize_names: true)
-      roadtrip_exposure_structure(parsed)
-      expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('ETA is too far out to receive forecast')
-      expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('ETA is too far out to receive forecast')
+      VCR.use_cassette('route_long_distance_TO_SV') do
+        json_payload = {
+          'origin': 'Toronto, Canada',
+          'destination': 'San Salvador, El Salvador',
+          'api_key': 'jgn983hy48thw9begh98h4539h4'
+        }
+    
+        post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+    
+        expect(response).to be_successful
+        parsed = JSON.parse(response.body, symbolize_names: true)
+        roadtrip_exposure_structure(parsed)
+        expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('ETA is too far out to receive forecast')
+        expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('ETA is too far out to receive forecast')
+      end
     end
   end
 end
