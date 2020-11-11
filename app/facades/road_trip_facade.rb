@@ -1,8 +1,6 @@
 class RoadTripFacade
   def self.new_trip(origin, destination, user_key)
     if MapService.fetch_trip_duration(origin, destination)[:duration] == 'impossible'
-      user = User.find_by(api_key: user_key)
-      trip = RoadTrip.create(start_city: origin, end_city: destination, travel_time: 'impossible', user: user)
       RoadTripDetails.new({start_city: origin, end_city: destination, travel_time: 'impossible'}, '')
     else
       details = MapService.fetch_trip_duration(origin, destination)
