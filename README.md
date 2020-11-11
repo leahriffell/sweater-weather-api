@@ -1,10 +1,59 @@
+# Sweater Weather
+### API serving up endpoints for a roadtrip planning app
+_trip duration, current and forecasted weather upon arrival, background image for a city, user creation and authentication_
+
 ## Readme Content
+- [Learning Goals](#learning-goals)
+- [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running a server](#run-your-own-development-server)
+  - [Running the tests](#running-the-tests)
 - [API Endpoints](#api-endpoints)
   - [Get Forecast](#get-forecast)
   - [Get Location Background Image](#get-location-background-image)
   - [User Management: Register New User](#user-management-register-new-user)
   - [User Management: Login User](#user-management-login-user)
-- [Contributors](#contributors)
+  - [Create Roadtrip](#create-roadtrip)
+- [Database Schema](#database-schema)
+- [Next Steps](#next-steps)
+- [Author](#author)
+
+## Learning Goals
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Research, select, and consume an API based on your needs as a developer
+
+_____
+
+## Setup
+### Prerequisites
+- Ruby 2.5.3
+- Rails 5.2.4.3
+
+### Installation
+#### Install gems and setup your database:
+```
+bundle install
+rails db:create
+rails db:migrate
+```
+
+#### Run your own development server:
+```
+rails s
+```
+- You should be able to send requests to the app via http://localhost:3000/
+- This is only an API (no frontend view)
+- You can also access the production API at [sweater-weather-lriff.herokuapp.com](https://sweater-weather-lriff.herokuapp.com/)
+
+### Running the Tests
+- Run with $ bundle exec rspec. All tests should be passing.
+
+
+_____
 
 ## API Endpoints
 - This API is available at `https://sweater-weather-lriff.herokuapp.com/`
@@ -220,5 +269,65 @@ _____
 
 ______
 
-## Contributors
+### Create Roadtrip
+#### Posts a new roadtrip for a user and returns origin, destination, duration and weather info upon arrival
+- Required arguments:
+  - Send user information as JSON payload in body of the request
+      - origin
+      - destination
+      - api_key
+
+- Example request:
+  ```
+  POST https://sweater-weather-lriff.herokuapp.com/api/v1/road_trip
+  Content-Type: application/json
+  Accept: application/json
+
+  {
+    'origin': 'Denver, CO',
+    'destination': 'Los Angeles, CA',
+    'api_key': 'jgn983hy48thw9begh98h4539h4'
+  }
+  ```
+- Example response: 
+  ```
+  {
+    "data": {
+      "id": null,
+      "type": "roadtrip",
+      "attributes": {
+        "start_city": "Denver, CO",
+        "end_city": "Los Angeles, CA",
+        "travel_time": "14:30:48"
+        "weather_at_eta": {
+          "temperature": 63,
+          "conditions": "winds light and variable"
+        }
+      }
+    }
+  }
+  ```
+- Definition of Attributes 
+
+  | Attribute      | Definition
+  | -------------  |:-------------:|
+  | start_city     | insert        |
+  | end_city       | insert        |
+  | travel_time    | insert        |
+  | temperature    | insert        |
+  | conditions     | insert        |
+
+_____
+
+## Database Schema
+<img src="https://user-images.githubusercontent.com/34531014/98763358-1720ee00-2397-11eb-9239-1939088b0e88.png" width="700">
+
+_____
+
+## Next Steps
+- Allow user to fetch weather at ETA even if trip duration is over 48 hours
+  - The Open Weater API currently returns the hourly forecast for 48 hours but by also using the daily forecast this call provides, I could return forecasted weather at ETA for a trip up to 7 days
+- Convert datetime fields to UTC to avoid timezone issues
+_____
+## Author
 - Leah Riffell | [github](https://github.com/leahriffell) | [linkedin](https://www.linkedin.com/in/leah-riffell/)

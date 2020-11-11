@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=Denver,%20CO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Version:
+      - v1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1714'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1406&per_page=1&query=Denver%2C+CO>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=2&per_page=1&query=Denver%2C+CO>;
+        rel="next"
+      X-Total:
+      - '1406'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - 24e6e90a-57c6-40b0-b1ef-c898c242c2b7
+      X-Runtime:
+      - '0.268775'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 11 Nov 2020 03:28:27 GMT
+      Age:
+      - '30583'
+      X-Served-By:
+      - cache-dca17721-DCA, cache-den19642-DEN
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 1, 1
+      X-Timer:
+      - S1605065308.826328,VS0,VE1
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":1406,"total_pages":1406,"results":[{"id":"36XAdOONlxc","created_at":"2020-01-14T01:34:26-05:00","updated_at":"2020-11-10T08:13:42-05:00","promoted_at":null,"width":6000,"height":4000,"color":"#130E0B","blur_hash":"LFP6,E~pxv?vMdxuo#%g%fRPD%IA","description":"Sleeping
+        Owl","alt_description":null,"urls":{"raw":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","full":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","regular":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","small":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","thumb":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30"},"links":{"self":"https://api.unsplash.com/photos/36XAdOONlxc","html":"https://unsplash.com/photos/36XAdOONlxc","download":"https://unsplash.com/photos/36XAdOONlxc/download","download_location":"https://api.unsplash.com/photos/36XAdOONlxc/download"},"categories":[],"likes":5,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"FNDAToNnUJc","updated_at":"2020-11-07T20:13:08-05:00","username":"joshua_forbes","name":"Joshua
+        Forbes","first_name":"Joshua","last_name":"Forbes","twitter_username":"JustJoshSA","portfolio_url":"https://www.joshuaforbes.co.za","bio":"IG:
+        @joshua_forbes\r\nTW: @JustJoshSA\r\nFB: @JustJoshZA\r\n\r\nhttps://www.joshuaforbes.co.za
+        ","location":"South Africa","links":{"self":"https://api.unsplash.com/users/joshua_forbes","html":"https://unsplash.com/@joshua_forbes","photos":"https://api.unsplash.com/users/joshua_forbes/photos","likes":"https://api.unsplash.com/users/joshua_forbes/likes","portfolio":"https://api.unsplash.com/users/joshua_forbes/portfolio","following":"https://api.unsplash.com/users/joshua_forbes/following","followers":"https://api.unsplash.com/users/joshua_forbes/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1500881487277-547e141db773?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1500881487277-547e141db773?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1500881487277-547e141db773?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"joshua_forbes","total_collections":0,"total_likes":304,"total_photos":86,"accepted_tos":true},"tags":[{"type":"search","title":"denver"},{"type":"landing_page","title":"animal","source":{"ancestry":{"type":{"slug":"images","pretty_slug":"Images"},"category":{"slug":"animals","pretty_slug":"Animals"}},"title":"Animals
+        Images \u0026 Pictures","subtitle":"Download free animals images","description":"Passionate
+        photographers have captured the most gorgeous animals in the world in their
+        natural habitats and shared them with Unsplash. Now you can use these photos
+        however you wish, for free!","meta_title":"Best 20+ Animals Pictures [HD]
+        | Download Free Images on Unsplash","meta_description":"Choose from hundreds
+        of free animals pictures. Download HD animals photos for free on Unsplash.","cover_photo":{"id":"YozNeHM8MaA","created_at":"2017-04-18T13:00:04-04:00","updated_at":"2020-10-21T01:26:13-04:00","promoted_at":"2017-04-19T13:54:55-04:00","width":5184,"height":3456,"color":"#120803","blur_hash":"LPR{0ext~pIU%MRQM{%M%LozIBM|","description":"I
+        met this dude on safari in Kruger National park in northern South Africa.
+        The giraffes were easily in my favorite creatures to witness. They seemed
+        almost prehistoric the the way the graced the African plain.","alt_description":"selective
+        focus photography of giraffe","urls":{"raw":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb","regular":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max","small":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max","thumb":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max"},"links":{"self":"https://api.unsplash.com/photos/YozNeHM8MaA","html":"https://unsplash.com/photos/YozNeHM8MaA","download":"https://unsplash.com/photos/YozNeHM8MaA/download","download_location":"https://api.unsplash.com/photos/YozNeHM8MaA/download"},"categories":[],"likes":1308,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"J6cg9TA8-e8","updated_at":"2020-10-21T08:29:30-04:00","username":"judahlegge","name":"Judah
+        Legge","first_name":"Judah","last_name":"Legge","twitter_username":null,"portfolio_url":null,"bio":null,"location":null,"links":{"self":"https://api.unsplash.com/users/judahlegge","html":"https://unsplash.com/@judahlegge","photos":"https://api.unsplash.com/users/judahlegge/photos","likes":"https://api.unsplash.com/users/judahlegge/likes","portfolio":"https://api.unsplash.com/users/judahlegge/portfolio","following":"https://api.unsplash.com/users/judahlegge/following","followers":"https://api.unsplash.com/users/judahlegge/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-fb-1492532922-001f65e39343.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-fb-1492532922-001f65e39343.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-fb-1492532922-001f65e39343.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":null,"total_collections":0,"total_likes":4,"total_photos":1,"accepted_tos":false}}}},{"type":"search","title":"zoo
+        entrance"}]}]}'
+  recorded_at: Wed, 11 Nov 2020 03:28:27 GMT
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Version:
+      - v1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1714'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1406&per_page=1&query=denver%2Cco>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=2&per_page=1&query=denver%2Cco>;
+        rel="next"
+      X-Total:
+      - '1406'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '48'
+      X-Request-Id:
+      - 7f367b7d-4007-49b1-9f2a-067369d72ffa
+      X-Runtime:
+      - '0.132040'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 11 Nov 2020 03:31:50 GMT
+      Age:
+      - '34375'
+      X-Served-By:
+      - cache-dca17762-DCA, cache-den19649-DEN
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 1, 1
+      X-Timer:
+      - S1605065510.048394,VS0,VE1
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":1406,"total_pages":1406,"results":[{"id":"36XAdOONlxc","created_at":"2020-01-14T01:34:26-05:00","updated_at":"2020-11-10T08:13:42-05:00","promoted_at":null,"width":6000,"height":4000,"color":"#130E0B","blur_hash":"LFP6,E~pxv?vMdxuo#%g%fRPD%IA","description":"Sleeping
+        Owl","alt_description":null,"urls":{"raw":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","full":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","regular":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","small":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30","thumb":"https://images.unsplash.com/photo-1578983427937-26078ee3d9d3?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max\u0026ixid=eyJhcHBfaWQiOjE4MTA0N30"},"links":{"self":"https://api.unsplash.com/photos/36XAdOONlxc","html":"https://unsplash.com/photos/36XAdOONlxc","download":"https://unsplash.com/photos/36XAdOONlxc/download","download_location":"https://api.unsplash.com/photos/36XAdOONlxc/download"},"categories":[],"likes":5,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"FNDAToNnUJc","updated_at":"2020-11-07T20:13:08-05:00","username":"joshua_forbes","name":"Joshua
+        Forbes","first_name":"Joshua","last_name":"Forbes","twitter_username":"JustJoshSA","portfolio_url":"https://www.joshuaforbes.co.za","bio":"IG:
+        @joshua_forbes\r\nTW: @JustJoshSA\r\nFB: @JustJoshZA\r\n\r\nhttps://www.joshuaforbes.co.za
+        ","location":"South Africa","links":{"self":"https://api.unsplash.com/users/joshua_forbes","html":"https://unsplash.com/@joshua_forbes","photos":"https://api.unsplash.com/users/joshua_forbes/photos","likes":"https://api.unsplash.com/users/joshua_forbes/likes","portfolio":"https://api.unsplash.com/users/joshua_forbes/portfolio","following":"https://api.unsplash.com/users/joshua_forbes/following","followers":"https://api.unsplash.com/users/joshua_forbes/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1500881487277-547e141db773?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1500881487277-547e141db773?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1500881487277-547e141db773?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"joshua_forbes","total_collections":0,"total_likes":304,"total_photos":86,"accepted_tos":true},"tags":[{"type":"search","title":"denver"},{"type":"landing_page","title":"animal","source":{"ancestry":{"type":{"slug":"images","pretty_slug":"Images"},"category":{"slug":"animals","pretty_slug":"Animals"}},"title":"Animals
+        Images \u0026 Pictures","subtitle":"Download free animals images","description":"Passionate
+        photographers have captured the most gorgeous animals in the world in their
+        natural habitats and shared them with Unsplash. Now you can use these photos
+        however you wish, for free!","meta_title":"Best 20+ Animals Pictures [HD]
+        | Download Free Images on Unsplash","meta_description":"Choose from hundreds
+        of free animals pictures. Download HD animals photos for free on Unsplash.","cover_photo":{"id":"YozNeHM8MaA","created_at":"2017-04-18T13:00:04-04:00","updated_at":"2020-10-21T01:26:13-04:00","promoted_at":"2017-04-19T13:54:55-04:00","width":5184,"height":3456,"color":"#120803","blur_hash":"LPR{0ext~pIU%MRQM{%M%LozIBM|","description":"I
+        met this dude on safari in Kruger National park in northern South Africa.
+        The giraffes were easily in my favorite creatures to witness. They seemed
+        almost prehistoric the the way the graced the African plain.","alt_description":"selective
+        focus photography of giraffe","urls":{"raw":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb","regular":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max","small":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max","thumb":"https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max"},"links":{"self":"https://api.unsplash.com/photos/YozNeHM8MaA","html":"https://unsplash.com/photos/YozNeHM8MaA","download":"https://unsplash.com/photos/YozNeHM8MaA/download","download_location":"https://api.unsplash.com/photos/YozNeHM8MaA/download"},"categories":[],"likes":1308,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"J6cg9TA8-e8","updated_at":"2020-10-21T08:29:30-04:00","username":"judahlegge","name":"Judah
+        Legge","first_name":"Judah","last_name":"Legge","twitter_username":null,"portfolio_url":null,"bio":null,"location":null,"links":{"self":"https://api.unsplash.com/users/judahlegge","html":"https://unsplash.com/@judahlegge","photos":"https://api.unsplash.com/users/judahlegge/photos","likes":"https://api.unsplash.com/users/judahlegge/likes","portfolio":"https://api.unsplash.com/users/judahlegge/portfolio","following":"https://api.unsplash.com/users/judahlegge/following","followers":"https://api.unsplash.com/users/judahlegge/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-fb-1492532922-001f65e39343.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-fb-1492532922-001f65e39343.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-fb-1492532922-001f65e39343.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":null,"total_collections":0,"total_likes":4,"total_photos":1,"accepted_tos":false}}}},{"type":"search","title":"zoo
+        entrance"}]}]}'
+  recorded_at: Wed, 11 Nov 2020 03:31:50 GMT
+recorded_with: VCR 6.0.0
