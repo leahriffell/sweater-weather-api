@@ -328,6 +328,8 @@ _____
 - Allow user to fetch weather at ETA even if trip duration is over 48 hours
   - The Open Weater API currently returns the hourly forecast for 48 hours but by also using the daily forecast this call provides, I could return forecasted weather at ETA for a trip up to 7 days
 - Convert datetime fields to UTC to avoid timezone issues
+- Implement caching for certain data points (latitude, longitude, etc.)
+- Allow user to add parameters to endpoints to designate response in imperial vs. metric units
 _____
 ## Author
 - Leah Riffell | [github](https://github.com/leahriffell) | [linkedin](https://www.linkedin.com/in/leah-riffell/)

@@ -12,6 +12,19 @@ RSpec.describe ImageService do
 
   describe 'sad paths' do
     it 'returns no matching photo' do
+      VCR.use_cassette('image_no_results') do
+        response = ImageService.fetch_image('abcdefgh')
+        expect(response).to be_a(Hash)
+
+        expect(response).to have_key(:total)
+        expect(response[:total]).to eq(0)
+
+        expect(response).to have_key(:total_pages)
+        expect(response[:total_pages]).to eq(0)
+
+        expect(response).to have_key(:results)
+        expect(response[:results]).to eq([])
+      end
     end
   end
 end
