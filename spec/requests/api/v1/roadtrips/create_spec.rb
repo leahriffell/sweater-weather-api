@@ -88,7 +88,20 @@ describe 'New Roadtrip API' do
     end
 
     it "can return 'impossible' for trip without matching cities" do
-      # actually, throw an error and don't create a new road trip 
+      json_payload = {
+        'origin': 'abcd',
+        'destination': 'efgh',
+        'api_key': 'jgn983hy48thw9begh98h4539h4'
+      }
+  
+      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+  
+      expect(response).to be_successful
+      parsed = JSON.parse(response.body, symbolize_names: true)
+      roadtrip_exposure_structure(parsed)
+      expect(parsed[:data][:attributes][:travel_time]).to eq('impossible')
+      expect(parsed[:data][:attributes][:weather_at_eta][:temperature]).to eq('')
+      expect(parsed[:data][:attributes][:weather_at_eta][:conditions]).to eq('')
     end
 
     it 'sends a message if forecast is too far out to predict (ex: Toronto > San Salvador' do
