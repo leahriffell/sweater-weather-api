@@ -36,11 +36,16 @@ RSpec.describe MapService do
 
   describe 'sad paths' do
     describe 'forward_geocode' do
-      it 'more than one match?' do
-        # ex: Denver CO returns Denver city and Denver county.
-      end
-
       it 'no matching coordinates' do
+        VCR.use_cassette('geocode_no_match') do
+          response = MapService.forward_geocode('abcdefghijklmnop')
+
+          expect(response).to be_a(Hash)
+          expect(response).to have_key(:lat)
+          expect(response).to have_key(:lng)
+          expect(response[:lat]).to eq('no match')
+          expect(response[:lng]).to eq('no match')
+        end
       end
     end
 

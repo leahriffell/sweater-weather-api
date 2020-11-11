@@ -5,7 +5,7 @@ class MapService
       request.params['location'] = city_state.delete(" ")
     end
     parsed = parse(response)
-    parsed[:results][0][:locations][0][:latLng]
+    parse_lat_lng(parsed)
   end
 
   def self.fetch_trip_duration(start_location, end_location)
@@ -41,6 +41,14 @@ class MapService
       nil
     else
       response[:route][:locations][1][:latLng]
+    end
+  end
+
+  def self.parse_lat_lng(response)
+    if response[:results][0][:locations].empty?
+      {lat: 'no match', lng: 'no match'}
+    else
+      response[:results][0][:locations][0][:latLng]
     end
   end
 end
