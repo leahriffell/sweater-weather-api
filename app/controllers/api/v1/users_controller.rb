@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   def create
     user_details = JSON.parse(request.raw_post, symbolize_names: true)
-    user = User.create(user_details)
+    user = UserFacade.register(user_details)
     if user.save
       render json: UserSerializer.new(user), status: 201
     else
