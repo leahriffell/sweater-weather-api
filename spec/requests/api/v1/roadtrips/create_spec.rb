@@ -38,7 +38,19 @@ describe 'New Roadtrip API' do
 
   describe 'error handling' do
     it 'can return 401 (unauthorized) if request is sent without an API key' do
-      #test
+      json_payload = {
+        'origin': 'Denver,CO',
+        'destination': 'Larkspur,CO',
+      }
+  
+      post '/api/v1/road_trip', headers: @headers, params: json_payload.to_json
+  
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+      parsed = JSON.parse(response.body, symbolize_names: true)
+      expect(parsed).to be_a(Hash)
+      expect(parsed).to have_key(:error)
+      expect(parsed[:error]).to eq('Unable to authenticate')
     end
 
     it 'can return 401 (unauthorized) if request is sent with incorrect API key' do
