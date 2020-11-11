@@ -16,6 +16,7 @@ _trip duration, current and forecasted weather upon arrival, background image fo
   - [User Management: Login User](#user-management-login-user)
   - [Create Roadtrip](#create-roadtrip)
 - [Database Schema](#database-schema)
+- [Organizational Design](#organizational-design)
 - [Next Steps](#next-steps)
 - [Author](#author)
 
@@ -321,6 +322,25 @@ _____
 
 ## Database Schema
 <img src="https://user-images.githubusercontent.com/34531014/98763358-1720ee00-2397-11eb-9239-1939088b0e88.png" width="700">
+
+_____
+
+## Organizational Design
+
+- Implemented [facades](https://en.wikipedia.org/wiki/Facade_pattern) as the middle-layer between controllers and services
+  - They send plain old Ruby objects (POROs) to the controller
+- Utilized [services](https://en.wikipedia.org/wiki/Service_locator_pattern) as the middle-layer between facades and external API or database calls
+
+##### Facades:
+- Forecast
+- Image
+- Road Trip
+- User
+
+##### Services:
+- Image (hits Unsplash API)
+- Map (hits MapQuest API)
+- Weather (hits OpenWeather API)
 
 _____
 
