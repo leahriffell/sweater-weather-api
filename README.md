@@ -175,7 +175,7 @@ _____
     }
   }
   ```
-- Definition of Attributes 
+- Fields in Response 
 
   | Attribute      | Definition
   | -------------  |:-------------:|
@@ -220,7 +220,7 @@ _____
       }
   }
   ```
-- Definition of Attributes 
+- Fields in Response 
 
   | Attribute      | Definition
   | -------------  |:-------------:|
@@ -307,7 +307,7 @@ ______
     }
   }
   ```
-- Definition of Attributes 
+- Fields in Response 
 
   | Attribute      | Definition
   | -------------  |:-------------:|
