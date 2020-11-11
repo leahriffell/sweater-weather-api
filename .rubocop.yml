@@ -1,0 +1,5 @@
+AllCops:
+  Exclude:
+    - 'spec/fixtures/vcr_cassettes'
+    - 'spec/helpers.rb'
+    - 'spec/rails_helper.rb'
