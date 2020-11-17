@@ -10,8 +10,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Bundle
+          name: Install bundler
           command: gem install bundler:2.1.4
+      - run:
+          name: Bundle install
           command: bundle install
       - run:
           name: Test suite
