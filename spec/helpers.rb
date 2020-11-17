@@ -123,7 +123,7 @@ module Helpers
     expect(first_result).to be_a(Hash)
 
     expect(first_result).to have_key(:description)
-    expect(first_result[:description]).to be_a(String)
+    expect(first_result[:description]).to be_a(String).or eq(nil)
 
     expect(first_result).to have_key(:urls)
     expect(first_result[:urls]).to be_a(Hash)
