@@ -12,7 +12,6 @@ jobs:
       - run:
           name: Which bundler?
           command: gem install bundler:2.1.4
-                - run:
       - run:
           name: Test suite
           command: bundle exec rspec
