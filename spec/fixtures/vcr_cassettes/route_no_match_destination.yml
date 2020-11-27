@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 11 Nov 2020 14:20:48 GMT
+      - Fri, 27 Nov 2020 22:11:47 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -27,11 +27,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=B1F04F8E8BFF50134B153F2A0BB039F6; Path=/directions; HttpOnly
+      - JSESSIONID=0466DCFAC0908E5D68AE27A3AC515094; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Wed, 11 Nov 2020 14:20:48 GMT
+      - Fri, 27 Nov 2020 22:11:47 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJjb2xsZWN0aW9ucyI6W10sImluZm8iOnsic3RhdHVzY29kZSI6NTAwLCJjb3B5cmlnaHQiOnsiaW1hZ2VBbHRUZXh0IjoiwqkgMjAyMCBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJ0ZXh0IjoiwqkgMjAyMCBNYXBRdWVzdCwgSW5jLiJ9LCJtZXNzYWdlcyI6WyJFcnJvciBwcm9jZXNzaW5nIHJlcXVlc3Q6IExvY2F0aW9ucyByZXR1cm5lZCBubyByZXN1bHRzIl19fQ==
-  recorded_at: Wed, 11 Nov 2020 14:20:48 GMT
+  recorded_at: Fri, 27 Nov 2020 22:11:47 GMT
 - request:
     method: get
     uri: http://www.mapquestapi.com/directions/v2/route?from=New%20York,%20New%20York&key=MAP_SECRET_KEY&to=abcdefghijklmnop
@@ -68,7 +68,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 11 Nov 2020 14:24:42 GMT
+      - Fri, 27 Nov 2020 22:13:48 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -76,11 +76,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=88292480D13A334399724AFF8445C1DA; Path=/directions; HttpOnly
+      - JSESSIONID=1949CF00C2724F57EE829CCB39F01C16; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Wed, 11 Nov 2020 14:24:42 GMT
+      - Fri, 27 Nov 2020 22:13:48 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -97,5 +97,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJjb2xsZWN0aW9ucyI6W10sImluZm8iOnsic3RhdHVzY29kZSI6NTAwLCJjb3B5cmlnaHQiOnsiaW1hZ2VBbHRUZXh0IjoiwqkgMjAyMCBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJ0ZXh0IjoiwqkgMjAyMCBNYXBRdWVzdCwgSW5jLiJ9LCJtZXNzYWdlcyI6WyJFcnJvciBwcm9jZXNzaW5nIHJlcXVlc3Q6IExvY2F0aW9ucyByZXR1cm5lZCBubyByZXN1bHRzIl19fQ==
-  recorded_at: Wed, 11 Nov 2020 14:24:42 GMT
+  recorded_at: Fri, 27 Nov 2020 22:13:48 GMT
 recorded_with: VCR 6.0.0

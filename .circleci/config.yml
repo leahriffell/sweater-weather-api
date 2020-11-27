@@ -1,15 +1,44 @@
-version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2 
-
+---
+version: 2
 jobs:
   build:
+    working_directory: ~/sweater-weather-api
     docker:
-      - image: circleci/ruby:2.5.3-stretch-node
-    executor: ruby/default
+      - image: circleci/ruby:2.5.3
+        environment:
+          PGHOST: localhost
+          PGUSER: sweater-weater-api
+          RAILS_ENV: test
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER: sweater-weater-api
+          POSTGRES_DB: sweater-weater-api_test
+          POSTGRES_PASSWORD: "password test"
     steps:
       - checkout
-      - run:
-          name: Which bundler?
-          command: gem install bundler:2.1.4
-      - ruby/bundle-install
+
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: sweater-weater-api-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+
+      - run: gem install bundler
+      - run: bundle install --path vendor/bundle
+
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: sweater-weater-api-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Wait for DB
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # Setup the database
+      - run: bundle exec rake db:setup
+
+      # Run the tests
+      - run: bundle exec rspec
