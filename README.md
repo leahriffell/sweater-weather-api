@@ -1,7 +1,7 @@
 # Sweater Weather
 ![rails-badge](https://img.shields.io/badge/Rails-5.2.4-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/leahriffell/sweater-weather-api/main?style=flat-square)
 
-### API serving up endpoints for a roadtrip planning app
+### REST API serving up endpoints for a roadtrip planning app
 _trip duration, current and forecasted weather upon arrival, background image for a city, user creation and authentication_
 
 ## Readme Content
