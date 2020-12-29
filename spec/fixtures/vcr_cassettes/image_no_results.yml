@@ -57,228 +57,6 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 11 Nov 2020 14:53:32 GMT
-      Age:
-      - '0'
-      X-Served-By:
-      - cache-dca17731-DCA, cache-den19622-DEN
-      X-Cache:
-      - MISS, MISS
-      X-Cache-Hits:
-      - 0, 0
-      X-Timer:
-      - S1605106412.999644,VS0,VE82
-      Vary:
-      - Accept-Encoding, Origin,Authorization,client-geo-region
-    body:
-      encoding: ASCII-8BIT
-      string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 11 Nov 2020 14:53:32 GMT
-- request:
-    method: get
-    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=abcdefgh
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.1.0
-      Accept-Version:
-      - v1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '57'
-      Server:
-      - Cowboy
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Access-Control-Allow-Headers:
-      - "*"
-      Access-Control-Expose-Headers:
-      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      X-Total:
-      - '0'
-      X-Per-Page:
-      - '1'
-      Content-Type:
-      - application/json
-      X-Ratelimit-Limit:
-      - '50'
-      X-Ratelimit-Remaining:
-      - '47'
-      X-Request-Id:
-      - 3803d457-c2eb-40dc-ab35-93ec9067db03
-      X-Runtime:
-      - '0.024578'
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 vegur, 1.1 varnish, 1.1 varnish
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Wed, 11 Nov 2020 15:04:51 GMT
-      Age:
-      - '679'
-      X-Served-By:
-      - cache-dca17727-DCA, cache-mci5941-MCI
-      X-Cache:
-      - HIT, MISS
-      X-Cache-Hits:
-      - 1, 0
-      X-Timer:
-      - S1605107091.306825,VS0,VE35
-      Vary:
-      - Accept-Encoding, Origin,Authorization,client-geo-region
-    body:
-      encoding: ASCII-8BIT
-      string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 11 Nov 2020 15:04:51 GMT
-- request:
-    method: get
-    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=abcdefgh
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.1.0
-      Accept-Version:
-      - v1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '57'
-      Server:
-      - Cowboy
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Access-Control-Allow-Headers:
-      - "*"
-      Access-Control-Expose-Headers:
-      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      X-Total:
-      - '0'
-      X-Per-Page:
-      - '1'
-      Content-Type:
-      - application/json
-      X-Ratelimit-Limit:
-      - '50'
-      X-Ratelimit-Remaining:
-      - '47'
-      X-Request-Id:
-      - 3803d457-c2eb-40dc-ab35-93ec9067db03
-      X-Runtime:
-      - '0.024578'
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 vegur, 1.1 varnish, 1.1 varnish
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Wed, 11 Nov 2020 15:05:55 GMT
-      Age:
-      - '743'
-      X-Served-By:
-      - cache-dca17727-DCA, cache-mci5936-MCI
-      X-Cache:
-      - HIT, HIT
-      X-Cache-Hits:
-      - 1, 1
-      X-Timer:
-      - S1605107155.285967,VS0,VE1
-      Vary:
-      - Accept-Encoding, Origin,Authorization,client-geo-region
-    body:
-      encoding: ASCII-8BIT
-      string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 11 Nov 2020 15:05:55 GMT
-- request:
-    method: get
-    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=abcdefgh
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.1.0
-      Accept-Version:
-      - v1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '57'
-      Server:
-      - Cowboy
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Access-Control-Allow-Headers:
-      - "*"
-      Access-Control-Expose-Headers:
-      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      X-Total:
-      - '0'
-      X-Per-Page:
-      - '1'
-      Content-Type:
-      - application/json
-      X-Ratelimit-Limit:
-      - '50'
-      X-Ratelimit-Remaining:
-      - '47'
-      X-Request-Id:
-      - 3803d457-c2eb-40dc-ab35-93ec9067db03
-      X-Runtime:
-      - '0.024578'
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 vegur, 1.1 varnish, 1.1 varnish
-      Accept-Ranges:
-      - bytes
-      Date:
       - Wed, 11 Nov 2020 15:05:55 GMT
       Age:
       - '743'
@@ -1152,7 +930,7 @@ http_interactions:
   recorded_at: Wed, 11 Nov 2020 15:16:28 GMT
 - request:
     method: get
-    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=tfyhjkn
+    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=abcdefgh
     body:
       encoding: US-ASCII
       string: ''
@@ -1195,11 +973,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50'
       X-Ratelimit-Remaining:
-      - '42'
+      - '44'
       X-Request-Id:
-      - 7dd5ea4f-10ed-49b7-9124-d91f601ab11e
+      - 55bf8283-074e-449b-b989-2697523d7fef
       X-Runtime:
-      - '0.030211'
+      - '0.054122'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Via:
@@ -1207,23 +985,97 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 11 Nov 2020 15:25:09 GMT
+      - Fri, 27 Nov 2020 22:11:59 GMT
       Age:
-      - '0'
+      - '163'
       X-Served-By:
-      - cache-dca17720-DCA, cache-den19626-DEN
+      - cache-dca17773-DCA, cache-mdw17372-MDW
       X-Cache:
-      - MISS, MISS
+      - HIT, MISS
       X-Cache-Hits:
-      - 0, 0
+      - 1, 0
       X-Timer:
-      - S1605108310.552198,VS0,VE79
+      - S1606515119.257218,VS0,VE17
       Vary:
       - Accept-Encoding, Origin,Authorization,client-geo-region
     body:
       encoding: ASCII-8BIT
       string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 11 Nov 2020 15:25:09 GMT
+  recorded_at: Fri, 27 Nov 2020 22:11:59 GMT
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=abcdefgh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Version:
+      - v1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '57'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Total:
+      - '0'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '44'
+      X-Request-Id:
+      - 55bf8283-074e-449b-b989-2697523d7fef
+      X-Runtime:
+      - '0.054122'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 27 Nov 2020 22:15:34 GMT
+      Age:
+      - '378'
+      X-Served-By:
+      - cache-dca17773-DCA, cache-mdw17339-MDW
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 1, 1
+      X-Timer:
+      - S1606515334.430289,VS0,VE2
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":0,"total_pages":0,"results":[]}'
+  recorded_at: Fri, 27 Nov 2020 22:15:34 GMT
 - request:
     method: get
     uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=tfyhjkn
@@ -1269,11 +1121,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50'
       X-Ratelimit-Remaining:
-      - '42'
+      - '48'
       X-Request-Id:
-      - 7dd5ea4f-10ed-49b7-9124-d91f601ab11e
+      - 44a11be0-e40c-4a7d-b414-3cd44f79bd62
       X-Runtime:
-      - '0.030211'
+      - '0.058748'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Via:
@@ -1281,21 +1133,169 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 11 Nov 2020 15:25:09 GMT
+      - Fri, 27 Nov 2020 22:15:57 GMT
       Age:
-      - '0'
+      - '408'
       X-Served-By:
-      - cache-dca17720-DCA, cache-den19651-DEN
+      - cache-dca17773-DCA, cache-mdw17350-MDW
       X-Cache:
-      - MISS, HIT
+      - HIT, HIT
       X-Cache-Hits:
-      - 0, 1
+      - 1, 1
       X-Timer:
-      - S1605108310.691755,VS0,VE1
+      - S1606515357.267055,VS0,VE2
       Vary:
       - Accept-Encoding, Origin,Authorization,client-geo-region
     body:
       encoding: ASCII-8BIT
       string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 11 Nov 2020 15:25:09 GMT
+  recorded_at: Fri, 27 Nov 2020 22:15:57 GMT
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=tfyhjkn
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Version:
+      - v1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '57'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Total:
+      - '0'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '48'
+      X-Request-Id:
+      - 44a11be0-e40c-4a7d-b414-3cd44f79bd62
+      X-Runtime:
+      - '0.058748'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 27 Nov 2020 22:15:57 GMT
+      Age:
+      - '408'
+      X-Served-By:
+      - cache-dca17773-DCA, cache-mdw17345-MDW
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 1, 1
+      X-Timer:
+      - S1606515357.332466,VS0,VE1
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":0,"total_pages":0,"results":[]}'
+  recorded_at: Fri, 27 Nov 2020 22:15:57 GMT
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=zNSOFAF4GSSlCDkob_piOkcGE6rAIhRG1UgqNpSTHH8&orientation=landscape&page=1&per_page=1&query=abcdefgh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Version:
+      - v1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '57'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Total:
+      - '0'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '44'
+      X-Request-Id:
+      - 55bf8283-074e-449b-b989-2697523d7fef
+      X-Runtime:
+      - '0.054122'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 27 Nov 2020 22:16:00 GMT
+      Age:
+      - '404'
+      X-Served-By:
+      - cache-dca17773-DCA, cache-mdw17345-MDW
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 1, 1
+      X-Timer:
+      - S1606515361.695898,VS0,VE1
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":0,"total_pages":0,"results":[]}'
+  recorded_at: Fri, 27 Nov 2020 22:16:00 GMT
 recorded_with: VCR 6.0.0
