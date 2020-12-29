@@ -1,9 +1,10 @@
 # Sweater Weather
+![rails-badge](https://img.shields.io/badge/Rails-5.2.4-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/leahriffell/sweater-weather-api/main?style=flat-square)
+
 ### API serving up endpoints for a roadtrip planning app
 _trip duration, current and forecasted weather upon arrival, background image for a city, user creation and authentication_
 
 ## Readme Content
-- [Learning Goals](#learning-goals)
 - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -19,14 +20,6 @@ _trip duration, current and forecasted weather upon arrival, background image fo
 - [Organizational Design](#organizational-design)
 - [Next Steps](#next-steps)
 - [Author](#author)
-
-## Learning Goals
-- Expose an API that aggregates data from multiple external APIs
-- Expose an API that requires an authentication token
-- Expose an API for CRUD functionality
-- Determine completion criteria based on the needs of other developers
-- Research, select, and consume an API based on your needs as a developer
-
 _____
 
 ## Setup
